@@ -1,0 +1,1022 @@
+[
+ {
+   "property_name": "artifact:mime_type",
+   "property_translation": ["mime_type"]
+ },
+ {
+   "property_name": "artifact:payload_bin",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "artifact:url",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "artifact:hashes.MD5",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "artifact:hashes.SHA1",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "artifact:hashes.'SHA-256'",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "artifact:hashes.'SHA-512'",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "artifact:hashes.'SHA3-256'",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "artifact:hashes.'SHA3-512'",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "artifact:hashes.SSDEEP",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "artifact:hashes.TLSH",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "artifact:encryption_algorithm",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "artifact:decryption_key",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "autonomous-system:number",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "autonomous-system:name",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "autonomous-system:rir",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "directory:path",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "directory:path_enc",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "directory:ctime",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "directory:mtime",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "directory:atime",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "domain-name:value",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "email-addr:value",
+   "property_translation": ["src_user"]
+ },
+ {
+   "property_name": "email-addr:display_name",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "email-message:is_multipart",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "email-message:date",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "email-message:content_type",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "email-message:message_id",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "email-message:subject",
+   "property_translation": ["subject"]
+ },
+ {
+   "property_name": "email-message:received_lines",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "email-message:additional_header_fields.[*]",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "email-message:body",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "email-message:body_multipart[*].body",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "email-message:body_multipart[*].content_type",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "email-message:body_multipart[*].content_disposition",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:hashes.MD5",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:hashes.SHA1",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:hashes.'SHA-256'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:hashes.'SHA-512'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:hashes.'SHA3-256'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:hashes.'SHA3-512'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:hashes.SSDEEP",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:hashes.TLSH",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:size",
+   "property_translation": ["file_size"]
+ },
+ {
+   "property_name": "file:name",
+   "property_translation": ["file_name"]
+ },
+ {
+   "property_name": "file:name_enc",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:magic_number_hex",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:mime_type",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:ctime",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:mtime",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:atime",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'archive-ext'.comment",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'ntfs-ext'.sid",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'ntfs-ext'.alternate_data_streams[*].name",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'ntfs-ext'.alternate_data_streams[*].hashes.MD5",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'ntfs-ext'.alternate_data_streams[*].hashes.SHA1",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'ntfs-ext'.alternate_data_streams[*].hashes.'SHA-256'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'ntfs-ext'.alternate_data_streams[*].hashes.'SHA-512'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'ntfs-ext'.alternate_data_streams[*].hashes.'SHA3-256'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'ntfs-ext'.alternate_data_streams[*].hashes.'SHA3-512'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'ntfs-ext'.alternate_data_streams[*].hashes.SSDEEP",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'ntfs-ext'.alternate_data_streams[*].hashes.TLSH",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'ntfs-ext'.alternate_data_streams[*].size",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'pdf-ext'.version",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'pdf-ext'.is_optimized",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'pdf-ext'.document_info_dict.<KEY[N]>",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'pdf-ext'.pdfid0",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'pdf-ext'.pdfid1",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'raster-image-ext'.image_height",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'raster-image-ext'.image_width",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'raster-image-ext'.bits_per_pixel",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'raster-image-ext'.exif_tags.<KEY[N]>",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.imphash",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.machine_hex",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.number_of_sections",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.time_date_stamp",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pointer_to_symbol_table_hex",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.number_of_symbols",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.size_of_optional_header",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.characteristics_hex",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.file_header_hashes.MD5",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.file_header_hashes.SHA1",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.file_header_hashes.'SHA-256'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.file_header_hashes.'SHA-512'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.file_header_hashes.'SHA3-256'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.file_header_hashes.'SHA3-512'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.file_header_hashes.SSDEEP",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.file_header_hashes.TLSH",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.magic_hex",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.major_linker_version",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.minor_linker_version",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.size_of_code",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.size_of_initialized_data",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.size_of_uninitialized_data",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.address_of_entry_point",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.base_of_code",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.base_of_data",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.image_base",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.section_alignment",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.file_alignment",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.major_os_version",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.minor_os_version",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.major_image_version",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.minor_image_version",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.major_subsystem_version",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.minor_subsystem_version",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.win32_version_value_hex",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.size_of_image",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.size_of_headers",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.checksum_hex",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.subsystem_hex",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.dll_characteristics_hex",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.size_of_stack_reserve",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.size_of_stack_commit",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.size_of_heap_reserve",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.size_of_heap_commit",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.loader_flags_hex",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.number_of_rva_and_sizes",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.hashes.MD5",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.hashes.SHA1",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.hashes.'SHA-256'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.hashes.'SHA-512'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.hashes.'SHA3-256'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.hashes.'SHA3-512'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.hashes.SSDEEP",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.hashes.TLSH",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.sections[*].name",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.sections[*].size",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.sections[*].entropy",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.sections[*].hashes.MD5",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.sections[*].hashes.SHA1",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.sections[*].hashes.'SHA-256'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.sections[*].hashes.'SHA-512'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.sections[*].hashes.'SHA3-256'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.sections[*].hashes.'SHA3-512'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.sections[*].hashes.SSDEEP",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.sections[*].hashes.TLSH",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "ipv4-addr:value",
+   "property_translation": ["src_ip", "src", " dest_ip", "dest"]
+ },
+ {
+   "property_name": "ipv6-addr:value",
+   "property_translation": ["src_ip", "src", " dest_ip", "dest"]
+ },
+ {
+   "property_name": "mac-addr:value",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "mutex:name",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:start",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:end",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:is_active",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:src_port",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:dst_port",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:protocols",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:src_byte_count",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:dst_byte_count",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:src_packets",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:dst_packets",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:ipfix.<KEY[N]>",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:extensions.http-request-ext.request_method",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:extensions.http-request-ext.request_value",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:extensions.http-request-ext.request_version",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:extensions.http-request-ext.request_header.<KEY[N]>",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:extensions.http-request-ext.message_body_length",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:extensions.icmp-ext.icmp_type_hex",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:extensions.icmp-ext.icmp_code_hex",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:extensions.socket-ext.address_family",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:extensions.socket-ext.is_blocking",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:extensions.socket-ext.is_listening",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:extensions.socket-ext.options.<KEY[N]>",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:extensions.socket-ext.socket_type",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:extensions.socket-ext.socket_descriptor",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:extensions.socket-ext.socket_handle",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:extensions.tcp-ext.src_flags_hex",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "network-traffic:extensions.tcp-ext.dst_flags_hex",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "process:is_hidden",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "process:pid",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "process:created_time",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "process:cwd",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "process:command_line",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "process:environment_variables.<KEY[N]>",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "process:extenions.'windows-process-ext'.aslr_enabled",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "process:extenions.'windows-process-ext'.dep_enabled",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "process:extenions.'windows-process-ext'.priority",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "process:extenions.'windows-process-ext'.owner_sid",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "process:extenions.'windows-process-ext'.window_title",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "process:extenions.'windows-process-ext'.startup_info.<KEY[N]>",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "process:extenions.'windows-process-ext'.integrity_level",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "process:extenions.'windows-service-ext'.service_name",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "process:extenions.'windows-service-ext'.descriptions",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "process:extenions.'windows-service-ext'.display_name",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "process:extenions.'windows-service-ext'.group_name",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "process:extenions.'windows-service-ext'.start_type",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "process:extenions.'windows-service-ext'.service_type",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "process:extenions.'windows-service-ext'.service_status",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "software:name",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "software:cpe",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "software:swid",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "software:languages",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "software:vendor",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "software:version",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "url:value",
+   "property_translation": ["url"]
+ },
+ {
+   "property_name": "user-account:user_id",
+   "property_translation": ["user_id"]
+ },
+ {
+   "property_name": "user-account:credential",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "user-account:account_login",
+   "property_translation": ["user"]
+ },
+ {
+   "property_name": "user-account:account_type",
+   "property_translation": ["user_type"]
+ },
+ {
+   "property_name": "user-account:display_name",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "user-account:is_service_account",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "user-account:is_privileged",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "user-account:can_escalate_privs",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "user-account:is_disabled",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "user-account:account_created",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "user-account:account_expires",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "user-account:credential_last_changed",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "user-account:account_first_login",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "user-account:account_last_login",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "user-account:extensions.'unix-account-ext'.gid",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "user-account:extensions.'unix-account-ext'.groups",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "user-account:extensions.'unix-account-ext'.home_dir",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "user-account:extensions.'unix-account-ext'.shell",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "windows-registry-key:key",
+   "property_translation": ["registry_path"]
+ },
+ {
+   "property_name": "windows-registry-key:values[*].name",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "windows-registry-key:values[*].data",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "windows-registry-key:values[*].data_type",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "windows-registry-key:modified_time",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "windows-registry-key:number_of_subkeys",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:is_self_signed",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:hashes.MD5",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "x509-certificate:hashes.SHA1",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "x509-certificate:hashes.'SHA-256'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "x509-certificate:hashes.'SHA-512'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "x509-certificate:hashes.'SHA3-256'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "x509-certificate:hashes.'SHA3-512'",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "x509-certificate:hashes.SSDEEP",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "x509-certificate:hashes.TLSH",
+   "property_translation": ["file_hash"]
+ },
+ {
+   "property_name": "x509-certificate:version",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:serial_number",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:signature_algorithm",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:issuer",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:validity_not_before",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:validity_not_after",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:subject",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:subject_public_key_algorithm",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:subject_public_key_modulus",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:subject_public_key_exponent",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:x509_v3_extensions.basic_constraints",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:x509_v3_extensions.name_constraints",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:x509_v3_extensions.policy_constraints",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:x509_v3_extensions.key_usage",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:x509_v3_extensions.extended_key_usage",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:x509_v3_extensions.subject_key_identifier",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:x509_v3_extensions.authority_key_identifier",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:x509_v3_extensions.subject_alternative_name",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:x509_v3_extensions.issuer_alternative_name",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:x509_v3_extensions.subject_directory_attributes",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:x509_v3_extensions.crl_distribution_points",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:x509_v3_extensions.inhibit_any_policy",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:x509_v3_extensions.private_key_usage_period_not_before",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:x509_v3_extensions.private_key_usage_period_not_after",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:x509_v3_extensions.certificate_policies",
+   "property_translation": [""]
+ },
+ {
+   "property_name": "x509-certificate:x509_v3_extensions.policy_mappings",
+   "property_translation": [""]
+ }
+]

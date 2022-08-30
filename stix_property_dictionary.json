@@ -1,0 +1,1787 @@
+[
+ {
+   "stix2detect_ref": 1,
+   "property_name": "artifact:mime_type",
+   "value_type": "string",
+   "value_example": "image/jpeg",
+   "sco_property_definition": "Whenever feasible, this value SHOULD be one of the values defined in the Template column in the IANA media type registry [Media Types]. Maintaining a comprehensive universal catalog of all extant file types is obviously not possible. When specifying a MIME Type not included in the IANA registry, implementers should use their best judgement so as to facilitate interoperability."
+ },
+ {
+   "stix2detect_ref": 2,
+   "property_name": "artifact:payload_bin",
+   "value_type": "binary",
+   "value_example": "ZX7HIBWPQA99NSUhEUgAAADI==",
+   "sco_property_definition": "Specifies the binary data contained in the artifact as a base64-encoded string. This property MUST NOT be present if url is provided."
+ },
+ {
+   "stix2detect_ref": 3,
+   "property_name": "artifact:url",
+   "value_type": "string",
+   "value_example": "https://example.com/research/index.html",
+   "sco_property_definition": "The value of this property MUST be a valid URL that resolves to the unencoded content. This property MUST NOT be present if payload_bin is provided."
+ },
+ {
+   "stix2detect_ref": 4,
+   "property_name": "artifact:hashes.MD5",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "0cc175b9c0f1b6a831c399e269772661",
+   "sco_property_definition": "Specifies the MD5 message digest algorithm. The corresponding hash string for this value MUST be a valid MD5 message digest as defined in [RFC1321]"
+ },
+ {
+   "stix2detect_ref": 5,
+   "property_name": "artifact:hashes.SHA1",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "86f7e437faa5a7fce15d1ddcb9eaeaea377667b8",
+   "sco_property_definition": "Specifies the SHA­-1 (secure-­hash algorithm 1) cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA-1 message digest as defined in [RFC3174]."
+ },
+ {
+   "stix2detect_ref": 6,
+   "property_name": "artifact:hashes.'SHA-256'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb",
+   "sco_property_definition": "Specifies the SHA-­256 cryptographic hash function (part of the SHA­2 family). The corresponding hash string for this value MUST be a valid SHA-256 message digest as defined in [RFC6234]."
+ },
+ {
+   "stix2detect_ref": 7,
+   "property_name": "artifact:hashes.'SHA-512'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "1f40fc92da241694750979ee6cf582f2d5d7d28e18335de05abc54d0560e0f5302860c652bf08d560252aa5e74210546f369fbbbce8c12cfc7957b2652fe9a75",
+   "sco_property_definition": "Specifies the SHA-­512 cryptographic hash function (part of the SHA­2 family). The corresponding hash string for this value MUST be a valid SHA-512 message digest as defined in [RFC6234]"
+ },
+ {
+   "stix2detect_ref": 8,
+   "property_name": "artifact:hashes.'SHA3-256'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "80084bf2fba02475726feb2cab2d8215eab14bc6bdd8bfb2c8151257032ecd8b",
+   "sco_property_definition": "Specifies the SHA3-256 cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA3-256 message digest as defined in [FIPS202]."
+ },
+ {
+   "stix2detect_ref": 9,
+   "property_name": "artifact:hashes.'SHA3-512'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "697f2d856172cb8309d6b8b97dac4de344b549d4dee61edfb4962d8698b7fa803f4f93ff24393586e28b5b957ac3d1d369420ce53332712f997bd336d09ab02a",
+   "sco_property_definition": "Specifies the SHA3-512 cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA3-512 message digest as defined in [FIPS202]."
+ },
+ {
+   "stix2detect_ref": 10,
+   "property_name": "artifact:hashes.SSDEEP",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "192:cYsjUvOY1FdOfXsYHwT+tPtY22vWkk5Pg0H:cQzCHlMnktR",
+   "sco_property_definition": "Specifies the ssdeep fuzzy hashing algorithm. The corresponding hash string for this value MUST be a valid piecewise hash as defined in the [SSDEEP] specification."
+ },
+ {
+   "stix2detect_ref": 11,
+   "property_name": "artifact:hashes.TLSH",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "T18F535B52F19146B7CD502278DF2CEB3199BFE134871816E3634882B6576B0D1AB7E3CA",
+   "sco_property_definition": "Specifies the TLSH fuzzy hashing algorithm. The corresponding hash string for this value MUST be a valid 35 byte long hash as defined in the [TLSH] specification."
+ },
+ {
+   "stix2detect_ref": 12,
+   "property_name": "artifact:encryption_algorithm",
+   "value_type": "encryption-algorithm-enum",
+   "value_example": "AES-256-GCM",
+   "sco_property_definition": "If the artifact is encrypted, specifies the type of encryption algorithm the binary data  (either via payload_bin or url) is encoded in. The value of this property MUST come from the encryption-algorithm-enum enumeration. If both mime_type and encryption_algorithm are included, this signifies that the artifact represents an encrypted archive."
+ },
+ {
+   "stix2detect_ref": 13,
+   "property_name": "artifact:decryption_key",
+   "value_type": "string",
+   "value_example": "My voice is my passport",
+   "sco_property_definition": "Specifies the decryption key for the encrypted binary data (either via payload_bin or url). For example, this may be useful in cases of sharing malware samples, which are often encoded in an encrypted archive. This property MUST NOT be present when the encryption_algorithm property is absent."
+ },
+ {
+   "stix2detect_ref": 14,
+   "property_name": "autonomous-system:number",
+   "value_type": "integer",
+   "value_example": "15139",
+   "sco_property_definition": "Specifies the number assigned to the AS. Such assignments are typically performed by a Regional Internet Registry (RIR)."
+ },
+ {
+   "stix2detect_ref": 15,
+   "property_name": "autonomous-system:name",
+   "value_type": "string",
+   "value_example": "ACME Industries",
+   "sco_property_definition": "Specifies the name of the AS."
+ },
+ {
+   "stix2detect_ref": 16,
+   "property_name": "autonomous-system:rir",
+   "value_type": "string",
+   "value_example": "ARIN",
+   "sco_property_definition": "Specifies the name of the Regional Internet Registry (RIR) that assigned the number to the AS."
+ },
+ {
+   "stix2detect_ref": 17,
+   "property_name": "directory:path",
+   "value_type": "string",
+   "value_example": "C:\\Windows\\System32",
+   "sco_property_definition": "Specifies the path, as originally observed, to the directory on the file system."
+ },
+ {
+   "stix2detect_ref": 18,
+   "property_name": "directory:path_enc",
+   "value_type": "string",
+   "value_example": "US-ASCII",
+   "sco_property_definition": "Specifies the observed encoding for the path. The value MUST be specified if the path is stored in a non-Unicode encoding. This value MUST be specified using the corresponding name from the 2013-12-20 revision of the IANA character set registry [Character Sets]. If the preferred MIME name for a character set is defined, this value MUST be used; if it is not defined, then the Name value from the registry MUST be used instead."
+ },
+ {
+   "stix2detect_ref": 19,
+   "property_name": "directory:ctime",
+   "value_type": "timestamp",
+   "value_example": "2016-01-20T12:31:12.123Z",
+   "sco_property_definition": "Specifies the date/time the directory was created."
+ },
+ {
+   "stix2detect_ref": 20,
+   "property_name": "directory:mtime",
+   "value_type": "timestamp",
+   "value_example": "2017-01-20T12:31:12.123Z",
+   "sco_property_definition": "Specifies the date/time the directory was last written to/modified."
+ },
+ {
+   "stix2detect_ref": 21,
+   "property_name": "directory:atime",
+   "value_type": "timestamp",
+   "value_example": "2018-01-20T12:31:12.123Z",
+   "sco_property_definition": "Specifies the date/time the directory was last accessed."
+ },
+ {
+   "stix2detect_ref": 22,
+   "property_name": "domain-name:value",
+   "value_type": "string",
+   "value_example": "example.com",
+   "sco_property_definition": "Specifies the value of the domain name. The value of this property MUST conform to [RFC1034], and each domain and sub-domain contained within the domain name MUST conform to [RFC5890]."
+ },
+ {
+   "stix2detect_ref": 23,
+   "property_name": "email-addr:value",
+   "value_type": "string",
+   "value_example": "john@example.com",
+   "sco_property_definition": "Specifies the value of the email address. This MUST NOT include the display name. This property corresponds to the addr-spec construction in section 3.4 of [RFC5322], for example, jane.smith@example.com."
+ },
+ {
+   "stix2detect_ref": 24,
+   "property_name": "email-addr:display_name",
+   "value_type": "string",
+   "value_example": "John Doe",
+   "sco_property_definition": "Specifies a single email display name, i.e., the name that is displayed to the human user of a mail application. This property corresponds to the display-name construction in section 3.4 of [RFC5322], for example, Jane Smith."
+ },
+ {
+   "stix2detect_ref": 25,
+   "property_name": "email-message:is_multipart",
+   "value_type": "boolean",
+   "value_example": "FALSE",
+   "sco_property_definition": "Indicates whether the email body contains multiple MIME parts."
+ },
+ {
+   "stix2detect_ref": 26,
+   "property_name": "email-message:date",
+   "value_type": "timestamp",
+   "value_example": "2018-01-20T12:31:12.123Z",
+   "sco_property_definition": "Specifies the date/time that the email message was sent"
+ },
+ {
+   "stix2detect_ref": 27,
+   "property_name": "email-message:content_type",
+   "value_type": "string",
+   "value_example": "text/html; charset=UTF-8",
+   "sco_property_definition": "Specifies the value of the \"Content-Type\" header of the email message."
+ },
+ {
+   "stix2detect_ref": 28,
+   "property_name": "email-message:message_id",
+   "value_type": "string",
+   "value_example": "25eb7e48-2252-48ea-80ce-cf2f6119a8e3@ENV95-E2013-1.domain95.lab",
+   "sco_property_definition": "Specifies the Message-ID field of the email message"
+ },
+ {
+   "stix2detect_ref": 29,
+   "property_name": "email-message:subject",
+   "value_type": "string",
+   "value_example": "Some email subject",
+   "sco_property_definition": "Specifies the subject of the email message."
+ },
+ {
+   "stix2detect_ref": 30,
+   "property_name": "email-message:received_lines",
+   "value_type": "list of type string",
+   "value_example": "[\"from mail.example.com ([198.51.100.3]) by smtp.gmail.com with ESMTPSA id q23sm23309939wme.17.2016.07.19.07.20.32 (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128); Tue, 19 Jul 2016 07:20:40 -0700 (PDT)\"]",
+   "sco_property_definition": "Specifies one or more \"Received\" header fields that may be included in the email headers. List values MUST appear in the same order as present in the email message."
+ },
+ {
+   "stix2detect_ref": 31,
+   "property_name": "email-message:additional_header_fields.[*]",
+   "value_type": "dictionary",
+   "value_example": "[\"steve@example.com\",\"jane@example.com\"]",
+   "sco_property_definition": "Specifies any other header fields (except for date, received_lines, content_type, from_ref, sender_ref, to_refs, cc_refs, bcc_refs, and subject) found in the email message, as a dictionary. Each key/value pair in the dictionary represents the name/value of a single header field or names/values of a header field that occurs more than once. Each dictionary key SHOULD be a case-preserved version of the header field name. The corresponding value for each dictionary key MUST always be a list of type string to support when a header field is repeated."
+ },
+ {
+   "stix2detect_ref": 32,
+   "property_name": "email-message:body",
+   "value_type": "string",
+   "value_example": "hello",
+   "sco_property_definition": "Specifies a string containing the email body. This property MUST NOT be used if is_multipart is true."
+ },
+ {
+   "stix2detect_ref": 33,
+   "property_name": "email-message:body_multipart[*].body",
+   "value_type": "string",
+   "value_example": "Cats are funny!",
+   "sco_property_definition": "Specifies the contents of the MIME part if the content_type is not provided or starts with text/ (e.g., in the case of plain text or HTML email). For inclusion in this property, the contents MUST be decoded to Unicode. Note that the charset provided in content_type is for informational usage and not for decoding of this property."
+ },
+ {
+   "stix2detect_ref": 34,
+   "property_name": "email-message:body_multipart[*].content_type",
+   "value_type": "string",
+   "value_example": "image/png",
+   "sco_property_definition": "Specifies the value of the “Content-Type” header field of the MIME part. Any additional “Content-Type” header field parameters such as charset SHOULD be included in this property."
+ },
+ {
+   "stix2detect_ref": 35,
+   "property_name": "email-message:body_multipart[*].content_disposition",
+   "value_type": "string",
+   "value_example": "inline",
+   "sco_property_definition": "Specifies the value of the “Content-Disposition” header field of the MIME part"
+ },
+ {
+   "stix2detect_ref": 36,
+   "property_name": "file:hashes.MD5",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "0cc175b9c0f1b6a831c399e269772661",
+   "sco_property_definition": "Specifies the MD5 message digest algorithm. The corresponding hash string for this value MUST be a valid MD5 message digest as defined in [RFC1321]"
+ },
+ {
+   "stix2detect_ref": 37,
+   "property_name": "file:hashes.SHA1",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "86f7e437faa5a7fce15d1ddcb9eaeaea377667b8",
+   "sco_property_definition": "Specifies the SHA­-1 (secure-­hash algorithm 1) cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA-1 message digest as defined in [RFC3174]."
+ },
+ {
+   "stix2detect_ref": 38,
+   "property_name": "file:hashes.'SHA-256'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb",
+   "sco_property_definition": "Specifies the SHA-­256 cryptographic hash function (part of the SHA­2 family). The corresponding hash string for this value MUST be a valid SHA-256 message digest as defined in [RFC6234]."
+ },
+ {
+   "stix2detect_ref": 39,
+   "property_name": "file:hashes.'SHA-512'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "1f40fc92da241694750979ee6cf582f2d5d7d28e18335de05abc54d0560e0f5302860c652bf08d560252aa5e74210546f369fbbbce8c12cfc7957b2652fe9a75",
+   "sco_property_definition": "Specifies the SHA-­512 cryptographic hash function (part of the SHA­2 family). The corresponding hash string for this value MUST be a valid SHA-512 message digest as defined in [RFC6234]"
+ },
+ {
+   "stix2detect_ref": 40,
+   "property_name": "file:hashes.'SHA3-256'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "80084bf2fba02475726feb2cab2d8215eab14bc6bdd8bfb2c8151257032ecd8b",
+   "sco_property_definition": "Specifies the SHA3-256 cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA3-256 message digest as defined in [FIPS202]."
+ },
+ {
+   "stix2detect_ref": 41,
+   "property_name": "file:hashes.'SHA3-512'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "697f2d856172cb8309d6b8b97dac4de344b549d4dee61edfb4962d8698b7fa803f4f93ff24393586e28b5b957ac3d1d369420ce53332712f997bd336d09ab02a",
+   "sco_property_definition": "Specifies the SHA3-512 cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA3-512 message digest as defined in [FIPS202]."
+ },
+ {
+   "stix2detect_ref": 42,
+   "property_name": "file:hashes.SSDEEP",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "192:cYsjUvOY1FdOfXsYHwT+tPtY22vWkk5Pg0H:cQzCHlMnktR",
+   "sco_property_definition": "Specifies the ssdeep fuzzy hashing algorithm. The corresponding hash string for this value MUST be a valid piecewise hash as defined in the [SSDEEP] specification."
+ },
+ {
+   "stix2detect_ref": 43,
+   "property_name": "file:hashes.TLSH",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "T18F535B52F19146B7CD502278DF2CEB3199BFE134871816E3634882B6576B0D1AB7E3CA",
+   "sco_property_definition": "Specifies the TLSH fuzzy hashing algorithm. The corresponding hash string for this value MUST be a valid 35 byte long hash as defined in the [TLSH] specification."
+ },
+ {
+   "stix2detect_ref": 44,
+   "property_name": "file:size",
+   "value_type": "integer",
+   "value_example": "25536",
+   "sco_property_definition": "Specifies the size of the file, in bytes. The value of this property MUST NOT be negative."
+ },
+ {
+   "stix2detect_ref": 45,
+   "property_name": "file:name",
+   "value_type": "string",
+   "value_example": "quêry.dll",
+   "sco_property_definition": "Specifies the name of the file."
+ },
+ {
+   "stix2detect_ref": 46,
+   "property_name": "file:name_enc",
+   "value_type": "string",
+   "value_example": "windows-1252",
+   "sco_property_definition": "Specifies the observed encoding for the name of the file. This value MUST be specified using the corresponding name from the 2013-12-20 revision of the IANA character set registry [Character Sets]. If the value from the Preferred MIME Name column for a character set is defined, this value MUST be used; if it is not defined, then the value from the Name column in the registry MUST be used instead. This property allows for the capture of the original text encoding for the file name, which may be forensically relevant; for example, a file on an NTFS volume whose name was created using the windows-1251 encoding, commonly used for languages based on Cyrillic script."
+ },
+ {
+   "stix2detect_ref": 47,
+   "property_name": "file:magic_number_hex",
+   "value_type": "hex",
+   "value_example": "00000002",
+   "sco_property_definition": "Specifies the hexadecimal constant (“magic number”) associated with a specific file format that corresponds to the file, if applicable."
+ },
+ {
+   "stix2detect_ref": 48,
+   "property_name": "file:mime_type",
+   "value_type": "string",
+   "value_example": "application/msword",
+   "sco_property_definition": "Specifies the MIME type name specified for the file, e.g., application/msword. Whenever feasible, this value SHOULD be one of the values defined in the Template column in the IANA media type registry [Media Types]. Maintaining a comprehensive universal catalog of all extant file types is obviously not possible. When specifying a MIME Type not included in the IANA registry, implementers should use their best judgement so as to facilitate interoperability."
+ },
+ {
+   "stix2detect_ref": 49,
+   "property_name": "file:ctime",
+   "value_type": "timestamp",
+   "value_example": "2016-01-20T12:31:12.123Z",
+   "sco_property_definition": "Specifies the date/time the file was created."
+ },
+ {
+   "stix2detect_ref": 50,
+   "property_name": "file:mtime",
+   "value_type": "timestamp",
+   "value_example": "2017-01-20T12:31:12.123Z",
+   "sco_property_definition": "Specifies the date/time the file was last written to/modified."
+ },
+ {
+   "stix2detect_ref": 51,
+   "property_name": "file:atime",
+   "value_type": "timestamp",
+   "value_example": "2018-01-20T12:31:12.123Z",
+   "sco_property_definition": "Specifies the date/time the file was last accessed."
+ },
+ {
+   "stix2detect_ref": 52,
+   "property_name": "file:extensions.'archive-ext'.comment",
+   "value_type": "string",
+   "value_example": "It is a file",
+   "sco_property_definition": "Specifies a comment included as part of the archive file."
+ },
+ {
+   "stix2detect_ref": 53,
+   "property_name": "file:extensions.'ntfs-ext'.sid",
+   "value_type": "string",
+   "value_example": "S-1-5-32-544",
+   "sco_property_definition": "Specifies the security ID (SID) value assigned to the file."
+ },
+ {
+   "stix2detect_ref": 54,
+   "property_name": "file:extensions.'ntfs-ext'.alternate_data_streams[*].name",
+   "value_type": "string",
+   "value_example": "second.stream",
+   "sco_property_definition": "Specifies the name of the alternate data stream."
+ },
+ {
+   "stix2detect_ref": 55,
+   "property_name": "file:extensions.'ntfs-ext'.alternate_data_streams[*].hashes.MD5",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "0cc175b9c0f1b6a831c399e269772661",
+   "sco_property_definition": "Specifies the MD5 message digest algorithm. The corresponding hash string for this value MUST be a valid MD5 message digest as defined in [RFC1321]"
+ },
+ {
+   "stix2detect_ref": 56,
+   "property_name": "file:extensions.'ntfs-ext'.alternate_data_streams[*].hashes.SHA1",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "86f7e437faa5a7fce15d1ddcb9eaeaea377667b8",
+   "sco_property_definition": "Specifies the SHA­-1 (secure-­hash algorithm 1) cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA-1 message digest as defined in [RFC3174]."
+ },
+ {
+   "stix2detect_ref": 57,
+   "property_name": "file:extensions.'ntfs-ext'.alternate_data_streams[*].hashes.'SHA-256'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb",
+   "sco_property_definition": "Specifies the SHA-­256 cryptographic hash function (part of the SHA­2 family). The corresponding hash string for this value MUST be a valid SHA-256 message digest as defined in [RFC6234]."
+ },
+ {
+   "stix2detect_ref": 58,
+   "property_name": "file:extensions.'ntfs-ext'.alternate_data_streams[*].hashes.'SHA-512'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "1f40fc92da241694750979ee6cf582f2d5d7d28e18335de05abc54d0560e0f5302860c652bf08d560252aa5e74210546f369fbbbce8c12cfc7957b2652fe9a75",
+   "sco_property_definition": "Specifies the SHA-­512 cryptographic hash function (part of the SHA­2 family). The corresponding hash string for this value MUST be a valid SHA-512 message digest as defined in [RFC6234]"
+ },
+ {
+   "stix2detect_ref": 59,
+   "property_name": "file:extensions.'ntfs-ext'.alternate_data_streams[*].hashes.'SHA3-256'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "80084bf2fba02475726feb2cab2d8215eab14bc6bdd8bfb2c8151257032ecd8b",
+   "sco_property_definition": "Specifies the SHA3-256 cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA3-256 message digest as defined in [FIPS202]."
+ },
+ {
+   "stix2detect_ref": 60,
+   "property_name": "file:extensions.'ntfs-ext'.alternate_data_streams[*].hashes.'SHA3-512'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "697f2d856172cb8309d6b8b97dac4de344b549d4dee61edfb4962d8698b7fa803f4f93ff24393586e28b5b957ac3d1d369420ce53332712f997bd336d09ab02a",
+   "sco_property_definition": "Specifies the SHA3-512 cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA3-512 message digest as defined in [FIPS202]."
+ },
+ {
+   "stix2detect_ref": 61,
+   "property_name": "file:extensions.'ntfs-ext'.alternate_data_streams[*].hashes.SSDEEP",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "192:cYsjUvOY1FdOfXsYHwT+tPtY22vWkk5Pg0H:cQzCHlMnktR",
+   "sco_property_definition": "Specifies the ssdeep fuzzy hashing algorithm. The corresponding hash string for this value MUST be a valid piecewise hash as defined in the [SSDEEP] specification."
+ },
+ {
+   "stix2detect_ref": 62,
+   "property_name": "file:extensions.'ntfs-ext'.alternate_data_streams[*].hashes.TLSH",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "T18F535B52F19146B7CD502278DF2CEB3199BFE134871816E3634882B6576B0D1AB7E3CA",
+   "sco_property_definition": "Specifies the TLSH fuzzy hashing algorithm. The corresponding hash string for this value MUST be a valid 35 byte long hash as defined in the [TLSH] specification."
+ },
+ {
+   "stix2detect_ref": 63,
+   "property_name": "file:extensions.'ntfs-ext'.alternate_data_streams[*].size",
+   "value_type": "integer",
+   "value_example": "25536",
+   "sco_property_definition": "Specifies the size of the alternate data stream, in bytes. The value of this property MUST NOT be negative."
+ },
+ {
+   "stix2detect_ref": 64,
+   "property_name": "file:extensions.'pdf-ext'.version",
+   "value_type": "string",
+   "value_example": "1.7",
+   "sco_property_definition": "Specifies the decimal version number of the string from the PDF header that specifies the version of the PDF specification to which the PDF file conforms. E.g., 1.4."
+ },
+ {
+   "stix2detect_ref": 65,
+   "property_name": "file:extensions.'pdf-ext'.is_optimized",
+   "value_type": "boolean",
+   "value_example": "FALSE",
+   "sco_property_definition": "Specifies whether the PDF file has been optimized."
+ },
+ {
+   "stix2detect_ref": 66,
+   "property_name": "file:extensions.'pdf-ext'.document_info_dict.<KEY[N]>",
+   "value_type": "dictionary",
+   "value_example": "\"Title\": \"Sample document\",\"Author\": \"Adobe Systems Incorporated\"",
+   "sco_property_definition": "Specifies details of the PDF document information dictionary (DID), which includes properties like the document creation data and producer, as a dictionary. Each key in the dictionary SHOULD be a case-preserved version of the corresponding entry in the document information dictionary without the prepended forward slash, e.g., Title. The corresponding value for the key MUST be the value specified for the document information dictionary entry, as a string."
+ },
+ {
+   "stix2detect_ref": 67,
+   "property_name": "file:extensions.'pdf-ext'.pdfid0",
+   "value_type": "string",
+   "value_example": "DFCE52BD827ECF765649852119D",
+   "sco_property_definition": "Specifies the first file identifier found for the PDF file."
+ },
+ {
+   "stix2detect_ref": 68,
+   "property_name": "file:extensions.'pdf-ext'.pdfid1",
+   "value_type": "string",
+   "value_example": "57A1E0F9ED2AE523E313C",
+   "sco_property_definition": "Specifies the second file identifier found for the PDF file."
+ },
+ {
+   "stix2detect_ref": 69,
+   "property_name": "file:extensions.'raster-image-ext'.image_height",
+   "value_type": "integer",
+   "value_example": "2000",
+   "sco_property_definition": "Specifies the height of the image in the image file, in pixels."
+ },
+ {
+   "stix2detect_ref": 70,
+   "property_name": "file:extensions.'raster-image-ext'.image_width",
+   "value_type": "integer",
+   "value_example": "5000",
+   "sco_property_definition": "Specifies the width of the image in the image file, in pixels."
+ },
+ {
+   "stix2detect_ref": 71,
+   "property_name": "file:extensions.'raster-image-ext'.bits_per_pixel",
+   "value_type": "integer",
+   "value_example": "4",
+   "sco_property_definition": "Specifies the sum of bits used for each color channel in the image file, and thus the total number of pixels used for expressing the color depth of the image."
+ },
+ {
+   "stix2detect_ref": 72,
+   "property_name": "file:extensions.'raster-image-ext'.exif_tags.<KEY[N]>",
+   "value_type": "dictionary",
+   "value_example": "\"Make\": \"Nikon\",\"Model\": \"D7000\",",
+   "sco_property_definition": "Specifies the set of EXIF tags found in the image file, as a dictionary. Each key/value pair in the dictionary represents the name/value of a single EXIF tag. Accordingly, each dictionary key MUST be a case-preserved version of the EXIF tag name, e.g., XResolution. Each dictionary value MUST be either an integer (for int* EXIF datatypes) or a string (for all other EXIF datatypes)."
+ },
+ {
+   "stix2detect_ref": 73,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type",
+   "value_type": "windows-pebinary-type-ov",
+   "value_example": "exe",
+   "sco_property_definition": "Specifies that the PE binary is a dynamically linked library (DLL)."
+ },
+ {
+   "stix2detect_ref": 74,
+   "property_name": "file:extensions.'windows-pebinary-ext'.imphash",
+   "value_type": "string",
+   "value_example": "9129bdbc18cfd1aba498c94e809567d5",
+   "sco_property_definition": "Specifies the special import hash, or ‘imphash’, calculated for the PE Binary based on its imported libraries and functions. For more information on the imphash algorithm, see the original article by Mandiant/FireEye [FireEye 2014]."
+ },
+ {
+   "stix2detect_ref": 75,
+   "property_name": "file:extensions.'windows-pebinary-ext'.machine_hex",
+   "value_type": "hex",
+   "value_example": "00000002",
+   "sco_property_definition": "Specifies the type of target machine."
+ },
+ {
+   "stix2detect_ref": 76,
+   "property_name": "file:extensions.'windows-pebinary-ext'.number_of_sections",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the number of sections in the PE binary, as a non-negative integer."
+ },
+ {
+   "stix2detect_ref": 77,
+   "property_name": "file:extensions.'windows-pebinary-ext'.time_date_stamp",
+   "value_type": "timestamp",
+   "value_example": "2016-01-20T12:31:12.123Z",
+   "sco_property_definition": "Specifies the time when the PE binary was created. The timestamp value MUST be precise to the second."
+ },
+ {
+   "stix2detect_ref": 78,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pointer_to_symbol_table_hex",
+   "value_type": "hex",
+   "value_example": "00000002",
+   "sco_property_definition": "Specifies the file offset of the COFF symbol table."
+ },
+ {
+   "stix2detect_ref": 79,
+   "property_name": "file:extensions.'windows-pebinary-ext'.number_of_symbols",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the number of entries in the symbol table of the PE binary, as a non-negative integer."
+ },
+ {
+   "stix2detect_ref": 80,
+   "property_name": "file:extensions.'windows-pebinary-ext'.size_of_optional_header",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the size of the optional header of the PE binary. The value of this property MUST NOT be negative."
+ },
+ {
+   "stix2detect_ref": 81,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.characteristics_hex",
+   "value_type": "hex",
+   "value_example": "00000002",
+   "sco_property_definition": "Specifies the flags that indicate the file’s characteristics."
+ },
+ {
+   "stix2detect_ref": 82,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.file_header_hashes.MD5",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "0cc175b9c0f1b6a831c399e269772661",
+   "sco_property_definition": "Specifies the MD5 message digest algorithm. The corresponding hash string for this value MUST be a valid MD5 message digest as defined in [RFC1321]"
+ },
+ {
+   "stix2detect_ref": 83,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.file_header_hashes.SHA1",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "86f7e437faa5a7fce15d1ddcb9eaeaea377667b8",
+   "sco_property_definition": "Specifies the SHA­-1 (secure-­hash algorithm 1) cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA-1 message digest as defined in [RFC3174]."
+ },
+ {
+   "stix2detect_ref": 84,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.file_header_hashes.'SHA-256'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb",
+   "sco_property_definition": "Specifies the SHA-­256 cryptographic hash function (part of the SHA­2 family). The corresponding hash string for this value MUST be a valid SHA-256 message digest as defined in [RFC6234]."
+ },
+ {
+   "stix2detect_ref": 85,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.file_header_hashes.'SHA-512'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "1f40fc92da241694750979ee6cf582f2d5d7d28e18335de05abc54d0560e0f5302860c652bf08d560252aa5e74210546f369fbbbce8c12cfc7957b2652fe9a75",
+   "sco_property_definition": "Specifies the SHA-­512 cryptographic hash function (part of the SHA­2 family). The corresponding hash string for this value MUST be a valid SHA-512 message digest as defined in [RFC6234]"
+ },
+ {
+   "stix2detect_ref": 86,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.file_header_hashes.'SHA3-256'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "80084bf2fba02475726feb2cab2d8215eab14bc6bdd8bfb2c8151257032ecd8b",
+   "sco_property_definition": "Specifies the SHA3-256 cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA3-256 message digest as defined in [FIPS202]."
+ },
+ {
+   "stix2detect_ref": 87,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.file_header_hashes.'SHA3-512'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "697f2d856172cb8309d6b8b97dac4de344b549d4dee61edfb4962d8698b7fa803f4f93ff24393586e28b5b957ac3d1d369420ce53332712f997bd336d09ab02a",
+   "sco_property_definition": "Specifies the SHA3-512 cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA3-512 message digest as defined in [FIPS202]."
+ },
+ {
+   "stix2detect_ref": 88,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.file_header_hashes.SSDEEP",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "192:cYsjUvOY1FdOfXsYHwT+tPtY22vWkk5Pg0H:cQzCHlMnktR",
+   "sco_property_definition": "Specifies the ssdeep fuzzy hashing algorithm. The corresponding hash string for this value MUST be a valid piecewise hash as defined in the [SSDEEP] specification."
+ },
+ {
+   "stix2detect_ref": 89,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.file_header_hashes.TLSH",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "T18F535B52F19146B7CD502278DF2CEB3199BFE134871816E3634882B6576B0D1AB7E3CA",
+   "sco_property_definition": "Specifies the TLSH fuzzy hashing algorithm. The corresponding hash string for this value MUST be a valid 35 byte long hash as defined in the [TLSH] specification."
+ },
+ {
+   "stix2detect_ref": 90,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.magic_hex",
+   "value_type": "hex",
+   "value_example": "00000002",
+   "sco_property_definition": "Specifies the hex value that indicates the type of the PE binary."
+ },
+ {
+   "stix2detect_ref": 91,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.major_linker_version",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the linker major version number."
+ },
+ {
+   "stix2detect_ref": 92,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.minor_linker_version",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the linker minor version number."
+ },
+ {
+   "stix2detect_ref": 93,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.size_of_code",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the size of the code (text) section. If there are multiple such sections, this refers to the sum of the sizes of each section. The value of this property MUST NOT be negative."
+ },
+ {
+   "stix2detect_ref": 94,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.size_of_initialized_data",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the size of the initialized data section. If there are multiple such sections, this refers to the sum of the sizes of each section. The value of this property MUST NOT be negative."
+ },
+ {
+   "stix2detect_ref": 95,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.size_of_uninitialized_data",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the size of the uninitialized data section. If there are multiple such sections, this refers to the sum of the sizes of each section. The value of this property MUST NOT be negative."
+ },
+ {
+   "stix2detect_ref": 96,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.address_of_entry_point",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the address of the entry point relative to the image base when the executable is loaded into memory."
+ },
+ {
+   "stix2detect_ref": 97,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.base_of_code",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the address that is relative to the image base of the beginning-of-code section when it is loaded into memory."
+ },
+ {
+   "stix2detect_ref": 98,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.base_of_data",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the address that is relative to the image base of the beginning-of-data section when it is loaded into memory."
+ },
+ {
+   "stix2detect_ref": 99,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.image_base",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the preferred address of the first byte of the image when loaded into memory."
+ },
+ {
+   "stix2detect_ref": 100,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.section_alignment",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the alignment (in bytes) of PE sections when they are loaded into memory."
+ },
+ {
+   "stix2detect_ref": 101,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.file_alignment",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the factor (in bytes) that is used to align the raw data of sections in the image file."
+ },
+ {
+   "stix2detect_ref": 102,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.major_os_version",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the major version number of the required operating system."
+ },
+ {
+   "stix2detect_ref": 103,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.minor_os_version",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the minor version number of the required operating system."
+ },
+ {
+   "stix2detect_ref": 104,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.major_image_version",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the major version number of the image."
+ },
+ {
+   "stix2detect_ref": 105,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.minor_image_version",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the minor version number of the image."
+ },
+ {
+   "stix2detect_ref": 106,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.major_subsystem_version",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the major version number of the subsystem."
+ },
+ {
+   "stix2detect_ref": 107,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.minor_subsystem_version",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the minor version number of the subsystem."
+ },
+ {
+   "stix2detect_ref": 108,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.win32_version_value_hex",
+   "value_type": "hex",
+   "value_example": "00000002",
+   "sco_property_definition": "Specifies the reserved win32 version value."
+ },
+ {
+   "stix2detect_ref": 109,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.size_of_image",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the size of the image in bytes, including all headers, as the image is loaded in memory. The value of this property MUST NOT be negative."
+ },
+ {
+   "stix2detect_ref": 110,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.size_of_headers",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the combined size of the MS-DOS, PE header, and section headers, rounded up to a multiple of the value specified in the file_alignment header. The value of this property MUST NOT be negative."
+ },
+ {
+   "stix2detect_ref": 111,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.checksum_hex",
+   "value_type": "hex",
+   "value_example": "00000002",
+   "sco_property_definition": "Specifies the checksum of the PE binary."
+ },
+ {
+   "stix2detect_ref": 112,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.subsystem_hex",
+   "value_type": "hex",
+   "value_example": "00000002",
+   "sco_property_definition": "Specifies the subsystem (e.g., GUI, device driver, etc.) that is required to run this image."
+ },
+ {
+   "stix2detect_ref": 113,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.dll_characteristics_hex",
+   "value_type": "hex",
+   "value_example": "00000002",
+   "sco_property_definition": "Specifies the flags that characterize the PE binary."
+ },
+ {
+   "stix2detect_ref": 114,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.size_of_stack_reserve",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the size of the stack to reserve, in bytes. The value of this property MUST NOT be negative."
+ },
+ {
+   "stix2detect_ref": 115,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.size_of_stack_commit",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the size of the stack to commit, in bytes. The value of this property MUST NOT be negative."
+ },
+ {
+   "stix2detect_ref": 116,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.size_of_heap_reserve",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the size of the local heap space to reserve, in bytes. The value of this property MUST NOT be negative."
+ },
+ {
+   "stix2detect_ref": 117,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.size_of_heap_commit",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the size of the local heap space to commit, in bytes. The value of this property MUST NOT be negative."
+ },
+ {
+   "stix2detect_ref": 118,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.loader_flags_hex",
+   "value_type": "hex",
+   "value_example": "00000002",
+   "sco_property_definition": "Specifies the reserved loader flags."
+ },
+ {
+   "stix2detect_ref": 119,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.number_of_rva_and_sizes",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the number of data-directory entries in the remainder of the optional header."
+ },
+ {
+   "stix2detect_ref": 120,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.hashes.MD5",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "0cc175b9c0f1b6a831c399e269772661",
+   "sco_property_definition": "Specifies the MD5 message digest algorithm. The corresponding hash string for this value MUST be a valid MD5 message digest as defined in [RFC1321]"
+ },
+ {
+   "stix2detect_ref": 121,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.hashes.SHA1",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "86f7e437faa5a7fce15d1ddcb9eaeaea377667b8",
+   "sco_property_definition": "Specifies the SHA­-1 (secure-­hash algorithm 1) cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA-1 message digest as defined in [RFC3174]."
+ },
+ {
+   "stix2detect_ref": 122,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.hashes.'SHA-256'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb",
+   "sco_property_definition": "Specifies the SHA-­256 cryptographic hash function (part of the SHA­2 family). The corresponding hash string for this value MUST be a valid SHA-256 message digest as defined in [RFC6234]."
+ },
+ {
+   "stix2detect_ref": 123,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.hashes.'SHA-512'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "1f40fc92da241694750979ee6cf582f2d5d7d28e18335de05abc54d0560e0f5302860c652bf08d560252aa5e74210546f369fbbbce8c12cfc7957b2652fe9a75",
+   "sco_property_definition": "Specifies the SHA-­512 cryptographic hash function (part of the SHA­2 family). The corresponding hash string for this value MUST be a valid SHA-512 message digest as defined in [RFC6234]"
+ },
+ {
+   "stix2detect_ref": 124,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.hashes.'SHA3-256'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "80084bf2fba02475726feb2cab2d8215eab14bc6bdd8bfb2c8151257032ecd8b",
+   "sco_property_definition": "Specifies the SHA3-256 cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA3-256 message digest as defined in [FIPS202]."
+ },
+ {
+   "stix2detect_ref": 125,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.hashes.'SHA3-512'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "697f2d856172cb8309d6b8b97dac4de344b549d4dee61edfb4962d8698b7fa803f4f93ff24393586e28b5b957ac3d1d369420ce53332712f997bd336d09ab02a",
+   "sco_property_definition": "Specifies the SHA3-512 cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA3-512 message digest as defined in [FIPS202]."
+ },
+ {
+   "stix2detect_ref": 126,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.hashes.SSDEEP",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "192:cYsjUvOY1FdOfXsYHwT+tPtY22vWkk5Pg0H:cQzCHlMnktR",
+   "sco_property_definition": "Specifies the ssdeep fuzzy hashing algorithm. The corresponding hash string for this value MUST be a valid piecewise hash as defined in the [SSDEEP] specification."
+ },
+ {
+   "stix2detect_ref": 127,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.optional_header.hashes.TLSH",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "T18F535B52F19146B7CD502278DF2CEB3199BFE134871816E3634882B6576B0D1AB7E3CA",
+   "sco_property_definition": "Specifies the TLSH fuzzy hashing algorithm. The corresponding hash string for this value MUST be a valid 35 byte long hash as defined in the [TLSH] specification."
+ },
+ {
+   "stix2detect_ref": 128,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.sections[*].name",
+   "value_type": "string",
+   "value_example": "CODE",
+   "sco_property_definition": "Specifies the size of the section, in bytes. The value of this property MUST NOT be negative."
+ },
+ {
+   "stix2detect_ref": 129,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.sections[*].size",
+   "value_type": "integer",
+   "value_example": "10",
+   "sco_property_definition": "Specifies the calculated entropy for the section, as calculated using the Shannon algorithm (https://en.wiktionary.org/wiki/Shannon_entropy). The size of each input character is defined as a byte, resulting in a possible range of 0 through 8."
+ },
+ {
+   "stix2detect_ref": 130,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.sections[*].entropy",
+   "value_type": "float",
+   "value_example": "0.061089",
+   "sco_property_definition": "Specifies any hashes computed over the section. Dictionary keys MUST come from the hash-algorithm-ov open vocabulary."
+ },
+ {
+   "stix2detect_ref": 131,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.sections[*].hashes.MD5",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "0cc175b9c0f1b6a831c399e269772661",
+   "sco_property_definition": "Specifies the MD5 message digest algorithm. The corresponding hash string for this value MUST be a valid MD5 message digest as defined in [RFC1321]"
+ },
+ {
+   "stix2detect_ref": 132,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.sections[*].hashes.SHA1",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "86f7e437faa5a7fce15d1ddcb9eaeaea377667b8",
+   "sco_property_definition": "Specifies the SHA­-1 (secure-­hash algorithm 1) cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA-1 message digest as defined in [RFC3174]."
+ },
+ {
+   "stix2detect_ref": 133,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.sections[*].hashes.'SHA-256'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb",
+   "sco_property_definition": "Specifies the SHA-­256 cryptographic hash function (part of the SHA­2 family). The corresponding hash string for this value MUST be a valid SHA-256 message digest as defined in [RFC6234]."
+ },
+ {
+   "stix2detect_ref": 134,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.sections[*].hashes.'SHA-512'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "1f40fc92da241694750979ee6cf582f2d5d7d28e18335de05abc54d0560e0f5302860c652bf08d560252aa5e74210546f369fbbbce8c12cfc7957b2652fe9a75",
+   "sco_property_definition": "Specifies the SHA-­512 cryptographic hash function (part of the SHA­2 family). The corresponding hash string for this value MUST be a valid SHA-512 message digest as defined in [RFC6234]"
+ },
+ {
+   "stix2detect_ref": 135,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.sections[*].hashes.'SHA3-256'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "80084bf2fba02475726feb2cab2d8215eab14bc6bdd8bfb2c8151257032ecd8b",
+   "sco_property_definition": "Specifies the SHA3-256 cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA3-256 message digest as defined in [FIPS202]."
+ },
+ {
+   "stix2detect_ref": 136,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.sections[*].hashes.'SHA3-512'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "697f2d856172cb8309d6b8b97dac4de344b549d4dee61edfb4962d8698b7fa803f4f93ff24393586e28b5b957ac3d1d369420ce53332712f997bd336d09ab02a",
+   "sco_property_definition": "Specifies the SHA3-512 cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA3-512 message digest as defined in [FIPS202]."
+ },
+ {
+   "stix2detect_ref": 137,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.sections[*].hashes.SSDEEP",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "192:cYsjUvOY1FdOfXsYHwT+tPtY22vWkk5Pg0H:cQzCHlMnktR",
+   "sco_property_definition": "Specifies the ssdeep fuzzy hashing algorithm. The corresponding hash string for this value MUST be a valid piecewise hash as defined in the [SSDEEP] specification."
+ },
+ {
+   "stix2detect_ref": 138,
+   "property_name": "file:extensions.'windows-pebinary-ext'.pe_type.sections[*].hashes.TLSH",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "T18F535B52F19146B7CD502278DF2CEB3199BFE134871816E3634882B6576B0D1AB7E3CA",
+   "sco_property_definition": "Specifies the TLSH fuzzy hashing algorithm. The corresponding hash string for this value MUST be a valid 35 byte long hash as defined in the [TLSH] specification."
+ },
+ {
+   "stix2detect_ref": 139,
+   "property_name": "ipv4-addr:value",
+   "value_type": "string",
+   "value_example": "198.51.100.3",
+   "sco_property_definition": "Specifies the values of one or more IPv4 addresses expressed using CIDR notation. If a given IPv4 Address object represents a single IPv4 address, the CIDR /32 suffix MAY be omitted. Example: 10.2.4.5/24"
+ },
+ {
+   "stix2detect_ref": 140,
+   "property_name": "ipv6-addr:value",
+   "value_type": "string",
+   "value_example": "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+   "sco_property_definition": "Specifies the values of one or more IPv6 addresses expressed using CIDR notation. If a given IPv6 Address object represents a single IPv6 address, the CIDR /128 suffix MAY be omitted."
+ },
+ {
+   "stix2detect_ref": 141,
+   "property_name": "mac-addr:value",
+   "value_type": "string",
+   "value_example": "00:00:ab:cd:ef:01",
+   "sco_property_definition": "Specifies the value of a single MAC address. The MAC address value MUST be represented as a single colon-delimited, lowercase MAC-48 address, which MUST include leading zeros for each octet. Example: 00:00:ab:cd:ef:01"
+ },
+ {
+   "stix2detect_ref": 142,
+   "property_name": "mutex:name",
+   "value_type": "string",
+   "value_example": "__CLEANSWEEP__",
+   "sco_property_definition": "Specifies the name of the mutex object."
+ },
+ {
+   "stix2detect_ref": 143,
+   "property_name": "network-traffic:start",
+   "value_type": "timestamp",
+   "value_example": "2016-01-20T12:31:12.123Z",
+   "sco_property_definition": "Specifies the date/time the network traffic was initiated, if known."
+ },
+ {
+   "stix2detect_ref": 144,
+   "property_name": "network-traffic:end",
+   "value_type": "timestamp",
+   "value_example": "2016-01-20T13:31:12.123Z",
+   "sco_property_definition": "Specifies the date/time the network traffic ended, if known. If the is_active property is true, then the end property MUST NOT be included. If start and end are both defined, then end MUST be later than the start value."
+ },
+ {
+   "stix2detect_ref": 145,
+   "property_name": "network-traffic:is_active",
+   "value_type": "boolean",
+   "value_example": "FALSE",
+   "sco_property_definition": "Indicates whether the network traffic is still ongoing. If the end property is provided, this property MUST be false."
+ },
+ {
+   "stix2detect_ref": 146,
+   "property_name": "network-traffic:src_port",
+   "value_type": "integer",
+   "value_example": "65535",
+   "sco_property_definition": "Specifies the source port used in the network traffic, as an integer. The port value MUST be in the range of 0 - 65535."
+ },
+ {
+   "stix2detect_ref": 147,
+   "property_name": "network-traffic:dst_port",
+   "value_type": "integer",
+   "value_example": "65535",
+   "sco_property_definition": "Specifies the destination port used in the network traffic, as an integer. The port value MUST be in the range of 0 - 65535."
+ },
+ {
+   "stix2detect_ref": 148,
+   "property_name": "network-traffic:protocols",
+   "value_type": "list of type string",
+   "value_example": "[\"ipv4\",\"tcp\",\"http\"]",
+   "sco_property_definition": "Specifies the protocols observed in the network traffic, along with their corresponding state. Protocols MUST be listed in low to high order, from outer to inner in terms of packet encapsulation. That is, the protocols in the outer level of the packet, such as IP, MUST be listed first. The protocol names SHOULD come from the service names defined in the Service Name column of the IANA Service Name and Port Number Registry [Port Numbers]. In cases where there is variance in the name of a network protocol not included in the IANA Registry, content producers should exercise their best judgement, and it is recommended that lowercase names be used for consistency with the IANA registry."
+ },
+ {
+   "stix2detect_ref": 149,
+   "property_name": "network-traffic:src_byte_count",
+   "value_type": "integer",
+   "value_example": "100",
+   "sco_property_definition": "Specifies the number of bytes, as a positive integer, sent from the source to the destination."
+ },
+ {
+   "stix2detect_ref": 150,
+   "property_name": "network-traffic:dst_byte_count",
+   "value_type": "integer",
+   "value_example": "200",
+   "sco_property_definition": "Specifies the number of bytes, as a positive integer, sent from the destination to the source."
+ },
+ {
+   "stix2detect_ref": 151,
+   "property_name": "network-traffic:src_packets",
+   "value_type": "integer",
+   "value_example": "4",
+   "sco_property_definition": "Specifies the number of packets, as a positive integer, sent from the source to the destination."
+ },
+ {
+   "stix2detect_ref": 152,
+   "property_name": "network-traffic:dst_packets",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the number of packets, as a positive integer, sent from the destination to the source."
+ },
+ {
+   "stix2detect_ref": 153,
+   "property_name": "network-traffic:ipfix.<KEY[N]>",
+   "value_type": "dictionary",
+   "value_example": "\"minimumIpTotalLength\": 32,\"maximumIpTotalLength\": 2556",
+   "sco_property_definition": "Specifies any IP Flow Information Export [IPFIX] data for the traffic, as a dictionary. Each key/value pair in the dictionary represents the name/value of a single IPFIX element. Accordingly, each dictionary key SHOULD be a case-preserved version of the IPFIX element name, e.g., octetDeltaCount. Each dictionary value MUST be either an integer or a string, as well as a valid IPFIX property."
+ },
+ {
+   "stix2detect_ref": 154,
+   "property_name": "network-traffic:extensions.http-request-ext.request_method",
+   "value_type": "string",
+   "value_example": "get",
+   "sco_property_definition": "Specifies the HTTP method portion of the HTTP request line, as a lowercase string."
+ },
+ {
+   "stix2detect_ref": 155,
+   "property_name": "network-traffic:extensions.http-request-ext.request_value",
+   "value_type": "string",
+   "value_example": "/download.html",
+   "sco_property_definition": "Specifies the value (typically a resource path) portion of the HTTP request line."
+ },
+ {
+   "stix2detect_ref": 156,
+   "property_name": "network-traffic:extensions.http-request-ext.request_version",
+   "value_type": "string",
+   "value_example": "request_version",
+   "sco_property_definition": "Specifies the HTTP version portion of the HTTP request line, as a lowercase string."
+ },
+ {
+   "stix2detect_ref": 157,
+   "property_name": "network-traffic:extensions.http-request-ext.request_header.<KEY[N]>",
+   "value_type": "dictionary",
+   "value_example": "\"Accept-Encoding\": \"gzip,deflate\",\"User-Agent\": \"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.6) Gecko/20040113\"",
+   "sco_property_definition": "Specifies all of the HTTP header fields that may be found in the HTTP client request, as a dictionary. Each key in the dictionary MUST be the name of the header field and SHOULD preserve case, e.g., User-Agent. The corresponding value for each dictionary key MUST always be a list of type string to support when a header field is repeated."
+ },
+ {
+   "stix2detect_ref": 158,
+   "property_name": "network-traffic:extensions.http-request-ext.message_body_length",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the length of the HTTP message body, if included, in bytes."
+ },
+ {
+   "stix2detect_ref": 159,
+   "property_name": "network-traffic:extensions.icmp-ext.icmp_type_hex",
+   "value_type": "hex",
+   "value_example": "00000002",
+   "sco_property_definition": "Specifies the ICMP type byte."
+ },
+ {
+   "stix2detect_ref": 160,
+   "property_name": "network-traffic:extensions.icmp-ext.icmp_code_hex",
+   "value_type": "hex",
+   "value_example": "00000002",
+   "sco_property_definition": "Specifies the ICMP code byte."
+ },
+ {
+   "stix2detect_ref": 161,
+   "property_name": "network-traffic:extensions.socket-ext.address_family",
+   "value_type": "network-socket-address-family-enum",
+   "value_example": "AF_UNSPEC",
+   "sco_property_definition": ""
+ },
+ {
+   "stix2detect_ref": 162,
+   "property_name": "network-traffic:extensions.socket-ext.is_blocking",
+   "value_type": "boolean",
+   "value_example": "FALSE",
+   "sco_property_definition": "Specifies whether the socket is in blocking mode."
+ },
+ {
+   "stix2detect_ref": 163,
+   "property_name": "network-traffic:extensions.socket-ext.is_listening",
+   "value_type": "boolean",
+   "value_example": "FALSE",
+   "sco_property_definition": "Specifies whether the socket is in listening mode."
+ },
+ {
+   "stix2detect_ref": 164,
+   "property_name": "network-traffic:extensions.socket-ext.options.<KEY[N]>",
+   "value_type": "dictionary",
+   "value_example": "\"SO_RCVTIMEO\": \"10\"",
+   "sco_property_definition": "Specifies any options (SO_*) that may be used by the socket, as a dictionary. Each key in the dictionary SHOULD be a case-preserved version of the option name, e.g., SO_ACCEPTCONN. Each key value in the dictionary MUST be the value for the corresponding options key."
+ },
+ {
+   "stix2detect_ref": 165,
+   "property_name": "network-traffic:extensions.socket-ext.socket_type",
+   "value_type": "network-socket-type-enum",
+   "value_example": "SOCK_STREAM",
+   "sco_property_definition": ""
+ },
+ {
+   "stix2detect_ref": 166,
+   "property_name": "network-traffic:extensions.socket-ext.socket_descriptor",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the socket file descriptor value associated with the socket, as a non-negative integer."
+ },
+ {
+   "stix2detect_ref": 167,
+   "property_name": "network-traffic:extensions.socket-ext.socket_handle",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the handle or inode value associated with the socket."
+ },
+ {
+   "stix2detect_ref": 168,
+   "property_name": "network-traffic:extensions.tcp-ext.src_flags_hex",
+   "value_type": "hex",
+   "value_example": "00000002",
+   "sco_property_definition": "src_flags_hex (optional) hex Specifies the source TCP flags, as the union of all TCP flags observed between the start of the traffic (as defined by the start property) and the end of the traffic (as defined by the end property). If the start and end times of the traffic are not specified, this property SHOULD be interpreted as the union of all TCP flags observed over the entirety of the network traffic being reported upon."
+ },
+ {
+   "stix2detect_ref": 169,
+   "property_name": "network-traffic:extensions.tcp-ext.dst_flags_hex",
+   "value_type": "hex",
+   "value_example": "00000002",
+   "sco_property_definition": "Specifies the destination TCP flags, as the union of all TCP flags observed between the start of the traffic (as defined by the start property) and the end of the traffic (as defined by the end property). If the start and end times of the traffic are not specified, this property SHOULD be interpreted as the union of all TCP flags observed over the entirety of the network traffic being reported upon."
+ },
+ {
+   "stix2detect_ref": 170,
+   "property_name": "process:is_hidden",
+   "value_type": "boolean",
+   "value_example": "FALSE",
+   "sco_property_definition": "Specifies whether the process is hidden."
+ },
+ {
+   "stix2detect_ref": 171,
+   "property_name": "process:pid",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the Process ID, or PID, of the process."
+ },
+ {
+   "stix2detect_ref": 172,
+   "property_name": "process:created_time",
+   "value_type": "timestamp",
+   "value_example": "2016-01-20T12:31:12.123Z",
+   "sco_property_definition": "Specifies the date/time at which the process was created."
+ },
+ {
+   "stix2detect_ref": 173,
+   "property_name": "process:cwd",
+   "value_type": "string",
+   "value_example": "C:\\system32\\",
+   "sco_property_definition": "Specifies the current working directory of the process."
+ },
+ {
+   "stix2detect_ref": 174,
+   "property_name": "process:command_line",
+   "value_type": "string",
+   "value_example": "./gedit-bin --new-window",
+   "sco_property_definition": "Specifies the full command line used in executing the process, including the process name (which may be specified individually via the image_ref.name property) and any arguments."
+ },
+ {
+   "stix2detect_ref": 175,
+   "property_name": "process:environment_variables.<KEY[N]>",
+   "value_type": "dictionary",
+   "value_example": "\"environment\": \"prod\"",
+   "sco_property_definition": "Specifies the list of environment variables associated with the process as a dictionary. Each key in the dictionary MUST be a case preserved version of the name of the environment variable, and each corresponding value MUST be the environment variable value as a string."
+ },
+ {
+   "stix2detect_ref": 176,
+   "property_name": "process:extenions.'windows-process-ext'.aslr_enabled",
+   "value_type": "boolean",
+   "value_example": "FALSE",
+   "sco_property_definition": "Specifies whether Address Space Layout Randomization (ASLR) is enabled for the process."
+ },
+ {
+   "stix2detect_ref": 177,
+   "property_name": "process:extenions.'windows-process-ext'.dep_enabled",
+   "value_type": "boolean",
+   "value_example": "FALSE",
+   "sco_property_definition": "Specifies whether Data Execution Prevention (DEP) is enabled for the process."
+ },
+ {
+   "stix2detect_ref": 178,
+   "property_name": "process:extenions.'windows-process-ext'.priority",
+   "value_type": "string",
+   "value_example": "HIGH_PRIORITY_CLASS",
+   "sco_property_definition": "Specifies the current priority class of the process in Windows. This value SHOULD be a string that ends in _CLASS."
+ },
+ {
+   "stix2detect_ref": 179,
+   "property_name": "process:extenions.'windows-process-ext'.owner_sid",
+   "value_type": "string",
+   "value_example": "S-1-5-21-186985262-1144665072-74031268-1309",
+   "sco_property_definition": "Specifies the Security ID (SID) value of the owner of the process."
+ },
+ {
+   "stix2detect_ref": 180,
+   "property_name": "process:extenions.'windows-process-ext'.window_title",
+   "value_type": "string",
+   "value_example": "A window",
+   "sco_property_definition": "Specifies the title of the main window of the process."
+ },
+ {
+   "stix2detect_ref": 181,
+   "property_name": "process:extenions.'windows-process-ext'.startup_info.<KEY[N]>",
+   "value_type": "dictionary",
+   "value_example": "\"lpDesktop\": \"1.1.1.1\"",
+   "sco_property_definition": "Specifies the STARTUP_INFO struct used by the process, as a dictionary. Each name/value pair in the struct MUST be represented as a key/value pair in the dictionary, where each key MUST be a case-preserved version of the original name. For example, given a name of \"lpDesktop\" the corresponding key would be lpDesktop."
+ },
+ {
+   "stix2detect_ref": 182,
+   "property_name": "process:extenions.'windows-process-ext'.integrity_level",
+   "value_type": "windows-integrity-level-enum",
+   "value_example": "medium",
+   "sco_property_definition": "Specifies the Windows integrity level, or trustworthiness, of the process. The values of this property MUST come from the windows-integrity-level-enum enumeration."
+ },
+ {
+   "stix2detect_ref": 183,
+   "property_name": "process:extenions.'windows-service-ext'.service_name",
+   "value_type": "string",
+   "value_example": "sirvizio",
+   "sco_property_definition": "Specifies the name of the service."
+ },
+ {
+   "stix2detect_ref": 184,
+   "property_name": "process:extenions.'windows-service-ext'.descriptions",
+   "value_type": "list of type string",
+   "value_example": "some service",
+   "sco_property_definition": "Specifies the descriptions defined for the service."
+ },
+ {
+   "stix2detect_ref": 185,
+   "property_name": "process:extenions.'windows-service-ext'.display_name",
+   "value_type": "string",
+   "value_example": "Sirvizio",
+   "sco_property_definition": "Specifies the display name of the service in Windows GUI controls."
+ },
+ {
+   "stix2detect_ref": 186,
+   "property_name": "process:extenions.'windows-service-ext'.group_name",
+   "value_type": "string",
+   "value_example": "a group",
+   "sco_property_definition": "Specifies the name of the load ordering group of which the service is a member."
+ },
+ {
+   "stix2detect_ref": 187,
+   "property_name": "process:extenions.'windows-service-ext'.start_type",
+   "value_type": "windows-service-start-type-enum",
+   "value_example": "SERVICE_AUTO_START",
+   "sco_property_definition": "Specifies the start options defined for the service. The values of this property MUST come from the windows-service-start-type-enum enumeration."
+ },
+ {
+   "stix2detect_ref": 188,
+   "property_name": "process:extenions.'windows-service-ext'.service_type",
+   "value_type": "windows-service-type-enum",
+   "value_example": "SERVICE_KERNEL_DRIVER",
+   "sco_property_definition": "Specifies the type of the service. The values of this property MUST come from the windows-service-type-enum enumeration."
+ },
+ {
+   "stix2detect_ref": 189,
+   "property_name": "process:extenions.'windows-service-ext'.service_status",
+   "value_type": "windows-service-status-enum",
+   "value_example": "SERVICE_RUNNING",
+   "sco_property_definition": ""
+ },
+ {
+   "stix2detect_ref": 190,
+   "property_name": "software:name",
+   "value_type": "string",
+   "value_example": "Word",
+   "sco_property_definition": "Specifies the name of the software"
+ },
+ {
+   "stix2detect_ref": 191,
+   "property_name": "software:cpe",
+   "value_type": "string",
+   "value_example": "cpe:2.3:a:microsoft:word:2000:*:*:*:*:*:*:*",
+   "sco_property_definition": "Specifies the Common Platform Enumeration (CPE) entry for the software, if available. The value for this property MUST be a CPE v2.3 entry from the official NVD CPE Dictionary [NVD] . While the CPE dictionary does not contain entries for all software, whenever it does contain an identifier for a given instance of software, this property SHOULD be present."
+ },
+ {
+   "stix2detect_ref": 192,
+   "property_name": "software:swid",
+   "value_type": "string",
+   "value_example": "12345",
+   "sco_property_definition": "Specifies the Software Identification (SWID) Tags [SWID] entry for the software, if available. The tag attribute, tagId, a globally unique identifier, SHOULD be used as a proxy identifier of the tagged product."
+ },
+ {
+   "stix2detect_ref": 193,
+   "property_name": "software:languages",
+   "value_type": "list of type string",
+   "value_example": "[\"en\",\"de\"]",
+   "sco_property_definition": "Specifies the languages supported by the software. The value of each list member MUST be a language code conformant to [RFC5646]."
+ },
+ {
+   "stix2detect_ref": 194,
+   "property_name": "software:vendor",
+   "value_type": "string",
+   "value_example": "Microsoft",
+   "sco_property_definition": "Specifies the name of the vendor of the software."
+ },
+ {
+   "stix2detect_ref": 195,
+   "property_name": "software:version",
+   "value_type": "string",
+   "value_example": "2002",
+   "sco_property_definition": "Specifies the version of the software."
+ },
+ {
+   "stix2detect_ref": 196,
+   "property_name": "url:value",
+   "value_type": "string",
+   "value_example": "https://example.com/research/index.html",
+   "sco_property_definition": "Specifies the value of the URL. The value of this property MUST conform to [RFC3986], more specifically section 1.1.3 with reference to the definition for \"Uniform Resource Locator\"."
+ },
+ {
+   "stix2detect_ref": 197,
+   "property_name": "user-account:user_id",
+   "value_type": "string",
+   "value_example": "1001",
+   "sco_property_definition": "Specifies the identifier of the account. The format of the identifier depends on the system the user account is maintained in, and may be a numeric ID, a GUID, an account name, an email address, etc. The user_id property should be populated with whatever field is the unique identifier for the system the account is a member of. For example, on UNIX systems it would be populated with the UID."
+ },
+ {
+   "stix2detect_ref": 198,
+   "property_name": "user-account:credential",
+   "value_type": "string",
+   "value_example": "password",
+   "sco_property_definition": "Specifies a cleartext credential. This is only intended to be used in capturing metadata from malware analysis (e.g., a hard-coded domain administrator password that the malware attempts to use for lateral movement) and SHOULD NOT be used for sharing of PII."
+ },
+ {
+   "stix2detect_ref": 199,
+   "property_name": "user-account:account_login",
+   "value_type": "string",
+   "value_example": "jdoe",
+   "sco_property_definition": "Specifies the account login string, used in cases where the user_id property specifies something other than what a user would type when they login. For example, in the case of a Unix account with user_id 0, the account_login might be \"root\"."
+ },
+ {
+   "stix2detect_ref": 200,
+   "property_name": "user-account:account_type",
+   "value_type": "account-type-ov",
+   "value_example": "facebook",
+   "sco_property_definition": ""
+ },
+ {
+   "stix2detect_ref": 201,
+   "property_name": "user-account:display_name",
+   "value_type": "string",
+   "value_example": "Dummy user",
+   "sco_property_definition": "Specifies the display name of the account, to be shown in user interfaces, if applicable. On Unix, this is equivalent to the GECOS field."
+ },
+ {
+   "stix2detect_ref": 202,
+   "property_name": "user-account:is_service_account",
+   "value_type": "boolean",
+   "value_example": "FALSE",
+   "sco_property_definition": "Indicates that the account is associated with a network service or system process (daemon), not a specific individual."
+ },
+ {
+   "stix2detect_ref": 203,
+   "property_name": "user-account:is_privileged",
+   "value_type": "boolean",
+   "value_example": "FALSE",
+   "sco_property_definition": "Specifies that the account has elevated privileges (i.e., in the case of root on Unix or the Windows Administrator account)."
+ },
+ {
+   "stix2detect_ref": 204,
+   "property_name": "user-account:can_escalate_privs",
+   "value_type": "boolean",
+   "value_example": "FALSE",
+   "sco_property_definition": "Specifies that the account has the ability to escalate privileges (i.e., in the case of sudo on Unix or a Windows Domain Admin account)"
+ },
+ {
+   "stix2detect_ref": 205,
+   "property_name": "user-account:is_disabled",
+   "value_type": "boolean",
+   "value_example": "FALSE",
+   "sco_property_definition": "Specifies if the account is disabled."
+ },
+ {
+   "stix2detect_ref": 206,
+   "property_name": "user-account:account_created",
+   "value_type": "timestamp",
+   "value_example": "2016-01-20T12:31:12.123Z",
+   "sco_property_definition": "Specifies when the account was created."
+ },
+ {
+   "stix2detect_ref": 207,
+   "property_name": "user-account:account_expires",
+   "value_type": "timestamp",
+   "value_example": "2017-01-20T13:31:12.123Z",
+   "sco_property_definition": "Specifies the expiration date of the account."
+ },
+ {
+   "stix2detect_ref": 208,
+   "property_name": "user-account:credential_last_changed",
+   "value_type": "timestamp",
+   "value_example": "2016-01-20T13:31:12.123Z",
+   "sco_property_definition": "Specifies when the account credential was last changed."
+ },
+ {
+   "stix2detect_ref": 209,
+   "property_name": "user-account:account_first_login",
+   "value_type": "timestamp",
+   "value_example": "2016-01-20T12:31:12.123Z",
+   "sco_property_definition": "Specifies when the account was first accessed."
+ },
+ {
+   "stix2detect_ref": 210,
+   "property_name": "user-account:account_last_login",
+   "value_type": "timestamp",
+   "value_example": "2017-01-20T13:31:12.123Z",
+   "sco_property_definition": "Specifies when the account was last accessed."
+ },
+ {
+   "stix2detect_ref": 211,
+   "property_name": "user-account:extensions.'unix-account-ext'.gid",
+   "value_type": "integer",
+   "value_example": "5",
+   "sco_property_definition": "Specifies the primary group ID of the account."
+ },
+ {
+   "stix2detect_ref": 212,
+   "property_name": "user-account:extensions.'unix-account-ext'.groups",
+   "value_type": "list of type string",
+   "value_example": "[\"group1\",\"group2\"]",
+   "sco_property_definition": "Specifies a list of names of groups that the account is a member of."
+ },
+ {
+   "stix2detect_ref": 213,
+   "property_name": "user-account:extensions.'unix-account-ext'.home_dir",
+   "value_type": "string",
+   "value_example": "/home/jdoe",
+   "sco_property_definition": "Specifies the home directory of the account."
+ },
+ {
+   "stix2detect_ref": 214,
+   "property_name": "user-account:extensions.'unix-account-ext'.shell",
+   "value_type": "string",
+   "value_example": "/bin/bash",
+   "sco_property_definition": "Specifies the account’s command shell."
+ },
+ {
+   "stix2detect_ref": 215,
+   "property_name": "windows-registry-key:key",
+   "value_type": "string",
+   "value_example": "HKEY_LOCAL_MACHINE\\\\System\\\\Foo\\\\Bar",
+   "sco_property_definition": "Specifies the full registry key including the hive. The value of the key, including the hive portion, SHOULD be case-preserved. The hive portion of the key MUST be fully expanded and not truncated; e.g., HKEY_LOCAL_MACHINE must be used instead of HKLM."
+ },
+ {
+   "stix2detect_ref": 216,
+   "property_name": "windows-registry-key:values[*].name",
+   "value_type": "string",
+   "value_example": "Foo",
+   "sco_property_definition": "Specifies the name of the registry value. For specifying the default value in a registry key, an empty string MUST be used."
+ },
+ {
+   "stix2detect_ref": 217,
+   "property_name": "windows-registry-key:values[*].data",
+   "value_type": "string",
+   "value_example": "qwerty",
+   "sco_property_definition": "Specifies the data contained in the registry value."
+ },
+ {
+   "stix2detect_ref": 218,
+   "property_name": "windows-registry-key:values[*].data_type",
+   "value_type": "windows-registry-datatype-enum",
+   "value_example": "REG_DWORD",
+   "sco_property_definition": "Specifies the registry (REG_*) data type used in the registry value. The values of this property MUST come from the windows-registry-datatype-enum enumeration."
+ },
+ {
+   "stix2detect_ref": 219,
+   "property_name": "windows-registry-key:modified_time",
+   "value_type": "timestamp",
+   "value_example": "2017-01-20T13:31:12.123Z",
+   "sco_property_definition": "Specifies the last date/time that the registry key was modified."
+ },
+ {
+   "stix2detect_ref": 220,
+   "property_name": "windows-registry-key:number_of_subkeys",
+   "value_type": "integer",
+   "value_example": "2",
+   "sco_property_definition": "Specifies the number of subkeys contained under the registry key."
+ },
+ {
+   "stix2detect_ref": 221,
+   "property_name": "x509-certificate:is_self_signed",
+   "value_type": "boolean",
+   "value_example": "FALSE",
+   "sco_property_definition": "Specifies whether the certificate is self-signed, i.e., whether it is signed by the same entity whose identity it certifies."
+ },
+ {
+   "stix2detect_ref": 222,
+   "property_name": "x509-certificate:hashes.MD5",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "0cc175b9c0f1b6a831c399e269772661",
+   "sco_property_definition": "Specifies the MD5 message digest algorithm. The corresponding hash string for this value MUST be a valid MD5 message digest as defined in [RFC1321]"
+ },
+ {
+   "stix2detect_ref": 223,
+   "property_name": "x509-certificate:hashes.SHA1",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "86f7e437faa5a7fce15d1ddcb9eaeaea377667b8",
+   "sco_property_definition": "Specifies the SHA­-1 (secure-­hash algorithm 1) cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA-1 message digest as defined in [RFC3174]."
+ },
+ {
+   "stix2detect_ref": 224,
+   "property_name": "x509-certificate:hashes.'SHA-256'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb",
+   "sco_property_definition": "Specifies the SHA-­256 cryptographic hash function (part of the SHA­2 family). The corresponding hash string for this value MUST be a valid SHA-256 message digest as defined in [RFC6234]."
+ },
+ {
+   "stix2detect_ref": 225,
+   "property_name": "x509-certificate:hashes.'SHA-512'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "1f40fc92da241694750979ee6cf582f2d5d7d28e18335de05abc54d0560e0f5302860c652bf08d560252aa5e74210546f369fbbbce8c12cfc7957b2652fe9a75",
+   "sco_property_definition": "Specifies the SHA-­512 cryptographic hash function (part of the SHA­2 family). The corresponding hash string for this value MUST be a valid SHA-512 message digest as defined in [RFC6234]"
+ },
+ {
+   "stix2detect_ref": 226,
+   "property_name": "x509-certificate:hashes.'SHA3-256'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "80084bf2fba02475726feb2cab2d8215eab14bc6bdd8bfb2c8151257032ecd8b",
+   "sco_property_definition": "Specifies the SHA3-256 cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA3-256 message digest as defined in [FIPS202]."
+ },
+ {
+   "stix2detect_ref": 227,
+   "property_name": "x509-certificate:hashes.'SHA3-512'",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "697f2d856172cb8309d6b8b97dac4de344b549d4dee61edfb4962d8698b7fa803f4f93ff24393586e28b5b957ac3d1d369420ce53332712f997bd336d09ab02a",
+   "sco_property_definition": "Specifies the SHA3-512 cryptographic hash function. The corresponding hash string for this value MUST be a valid SHA3-512 message digest as defined in [FIPS202]."
+ },
+ {
+   "stix2detect_ref": 228,
+   "property_name": "x509-certificate:hashes.SSDEEP",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "192:cYsjUvOY1FdOfXsYHwT+tPtY22vWkk5Pg0H:cQzCHlMnktR",
+   "sco_property_definition": "Specifies the ssdeep fuzzy hashing algorithm. The corresponding hash string for this value MUST be a valid piecewise hash as defined in the [SSDEEP] specification."
+ },
+ {
+   "stix2detect_ref": 229,
+   "property_name": "x509-certificate:hashes.TLSH",
+   "value_type": "hash-algorithm-ov",
+   "value_example": "T18F535B52F19146B7CD502278DF2CEB3199BFE134871816E3634882B6576B0D1AB7E3CA",
+   "sco_property_definition": "Specifies the TLSH fuzzy hashing algorithm. The corresponding hash string for this value MUST be a valid 35 byte long hash as defined in the [TLSH] specification."
+ },
+ {
+   "stix2detect_ref": 230,
+   "property_name": "x509-certificate:version",
+   "value_type": "string",
+   "value_example": "1.0",
+   "sco_property_definition": "Specifies the version of the encoded certificate."
+ },
+ {
+   "stix2detect_ref": 231,
+   "property_name": "x509-certificate:serial_number",
+   "value_type": "string",
+   "value_example": "02:08:87:83:f2:13:58:1f:79:52:1e:66:90:0a:02:24:c9:6b:c7:dc",
+   "sco_property_definition": "Specifies the unique identifier for the certificate, as issued by a specific Certificate Authority."
+ },
+ {
+   "stix2detect_ref": 232,
+   "property_name": "x509-certificate:signature_algorithm",
+   "value_type": "string",
+   "value_example": "something",
+   "sco_property_definition": "Specifies the name of the algorithm used to sign the certificate."
+ },
+ {
+   "stix2detect_ref": 233,
+   "property_name": "x509-certificate:issuer",
+   "value_type": "string",
+   "value_example": "C=ZA, ST=Western Cape, L=Cape Town, O=Thawte Consulting cc, OU=Certification Services Division, CN=Thawte Server CA/emailAddress=server-certs@thawte.com",
+   "sco_property_definition": "Specifies the name of the Certificate Authority that issued the certificate."
+ },
+ {
+   "stix2detect_ref": 234,
+   "property_name": "x509-certificate:validity_not_before",
+   "value_type": "timestamp",
+   "value_example": "2016-01-20T12:31:12.123Z",
+   "sco_property_definition": "Specifies the date on which the certificate validity period begins."
+ },
+ {
+   "stix2detect_ref": 235,
+   "property_name": "x509-certificate:validity_not_after",
+   "value_type": "timestamp",
+   "value_example": "2016-01-20T12:31:12.123Z",
+   "sco_property_definition": "Specifies the date on which the certificate validity period ends."
+ },
+ {
+   "stix2detect_ref": 236,
+   "property_name": "x509-certificate:subject",
+   "value_type": "string",
+   "value_example": "C=US, ST=Maryland, L=Pasadena, O=Brent Baccala, OU=FreeSoft, CN=www.freesoft.org/emailAddress=baccala@freesoft.org",
+   "sco_property_definition": "Specifies the name of the entity associated with the public key stored in the subject public key field of the certificate."
+ },
+ {
+   "stix2detect_ref": 237,
+   "property_name": "x509-certificate:subject_public_key_algorithm",
+   "value_type": "string",
+   "value_example": "algo",
+   "sco_property_definition": "Specifies the name of the algorithm with which to encrypt data being sent to the subject."
+ },
+ {
+   "stix2detect_ref": 238,
+   "property_name": "x509-certificate:subject_public_key_modulus",
+   "value_type": "string",
+   "value_example": "1293",
+   "sco_property_definition": "Specifies the modulus portion of the subject’s public RSA key."
+ },
+ {
+   "stix2detect_ref": 239,
+   "property_name": "x509-certificate:subject_public_key_exponent",
+   "value_type": "string",
+   "value_example": "sodkg",
+   "sco_property_definition": "Specifies the exponent portion of the subject’s public RSA key, as an integer."
+ },
+ {
+   "stix2detect_ref": 240,
+   "property_name": "x509-certificate:x509_v3_extensions.basic_constraints",
+   "value_type": "string",
+   "value_example": "critical,CA:TRUE, pathlen:0",
+   "sco_property_definition": "Specifies a multi-valued extension which indicates whether a certificate is a CA certificate. The first (mandatory) name is CA followed by TRUE or FALSE. If CA is TRUE, then an optional pathlen name followed by a non-negative value can be included. Also equivalent to the object ID (OID) value of 2.5.29.19."
+ },
+ {
+   "stix2detect_ref": 241,
+   "property_name": "x509-certificate:x509_v3_extensions.name_constraints",
+   "value_type": "string",
+   "value_example": "permitted;IP:192.168.0.0/255.255.0.0",
+   "sco_property_definition": "Specifies a namespace within which all subject names in subsequent certificates in a certification path MUST be located. Also equivalent to the object ID (OID) value of 2.5.29.30."
+ },
+ {
+   "stix2detect_ref": 242,
+   "property_name": "x509-certificate:x509_v3_extensions.policy_constraints",
+   "value_type": "string",
+   "value_example": "requireExplicitPolicy:3",
+   "sco_property_definition": "Specifies any constraints on path validation for certificates issued to CAs. Also equivalent to the object ID (OID) value of 2.5.29.36."
+ },
+ {
+   "stix2detect_ref": 243,
+   "property_name": "x509-certificate:x509_v3_extensions.key_usage",
+   "value_type": "string",
+   "value_example": "critical, keyCertSign",
+   "sco_property_definition": "Specifies a multi-valued extension consisting of a list of names of the permitted key usages. Also equivalent to the object ID (OID) value of 2.5.29.15."
+ },
+ {
+   "stix2detect_ref": 244,
+   "property_name": "x509-certificate:x509_v3_extensions.extended_key_usage",
+   "value_type": "string",
+   "value_example": "critical,codeSigning,1.2.3.4",
+   "sco_property_definition": "Specifies a list of usages indicating purposes for which the certificate public key can be used for. Also equivalent to the object ID (OID) value of 2.5.29.37."
+ },
+ {
+   "stix2detect_ref": 245,
+   "property_name": "x509-certificate:x509_v3_extensions.subject_key_identifier",
+   "value_type": "string",
+   "value_example": "hash",
+   "sco_property_definition": "Specifies the identifier that provides a means of identifying certificates that contain a particular public key. Also equivalent to the object ID (OID) value of 2.5.29.14."
+ },
+ {
+   "stix2detect_ref": 246,
+   "property_name": "x509-certificate:x509_v3_extensions.authority_key_identifier",
+   "value_type": "string",
+   "value_example": "keyid,issuer",
+   "sco_property_definition": "Specifies the identifier that provides a means of identifying the public key corresponding to the private key used to sign a certificate. Also equivalent to the object ID (OID) value of 2.5.29.35."
+ },
+ {
+   "stix2detect_ref": 247,
+   "property_name": "x509-certificate:x509_v3_extensions.subject_alternative_name",
+   "value_type": "string",
+   "value_example": "email:my@other.address,RID:1.2.3.4",
+   "sco_property_definition": "Specifies the additional identities to be bound to the subject of the certificate. Also equivalent to the object ID (OID) value of 2.5.29.17."
+ },
+ {
+   "stix2detect_ref": 248,
+   "property_name": "x509-certificate:x509_v3_extensions.issuer_alternative_name",
+   "value_type": "string",
+   "value_example": "issuer:copy",
+   "sco_property_definition": "Specifies the additional identities to be bound to the issuer of the certificate. Also equivalent to the object ID (OID) value of 2.5.29.18."
+ },
+ {
+   "stix2detect_ref": 249,
+   "property_name": "x509-certificate:x509_v3_extensions.subject_directory_attributes",
+   "value_type": "string",
+   "value_example": "something",
+   "sco_property_definition": "Specifies the identification attributes (e.g., nationality) of the subject. Also equivalent to the object ID (OID) value of 2.5.29.9."
+ },
+ {
+   "stix2detect_ref": 250,
+   "property_name": "x509-certificate:x509_v3_extensions.crl_distribution_points",
+   "value_type": "string",
+   "value_example": "URI:http://myhost.com/myca.crl",
+   "sco_property_definition": "Specifies how CRL information is obtained. Also equivalent to the object ID (OID) value of 2.5.29.31."
+ },
+ {
+   "stix2detect_ref": 251,
+   "property_name": "x509-certificate:x509_v3_extensions.inhibit_any_policy",
+   "value_type": "string",
+   "value_example": "2",
+   "sco_property_definition": "Specifies the number of additional certificates that may appear in the path before anyPolicy is no longer permitted. Also equivalent to the object ID (OID) value of 2.5.29.54."
+ },
+ {
+   "stix2detect_ref": 252,
+   "property_name": "x509-certificate:x509_v3_extensions.private_key_usage_period_not_before",
+   "value_type": "timestamp",
+   "value_example": "2016-01-20T12:31:12.123Z",
+   "sco_property_definition": "Specifies the date on which the validity period begins for the private key, if it is different from the validity period of the certificate."
+ },
+ {
+   "stix2detect_ref": 253,
+   "property_name": "x509-certificate:x509_v3_extensions.private_key_usage_period_not_after",
+   "value_type": "timestamp",
+   "value_example": "2016-01-20T12:31:12.123Z",
+   "sco_property_definition": "Specifies the date on which the validity period ends for the private key, if it is different from the validity period of the certificate."
+ },
+ {
+   "stix2detect_ref": 254,
+   "property_name": "x509-certificate:x509_v3_extensions.certificate_policies",
+   "value_type": "string",
+   "value_example": "1.2.4.5, 1.1.3.4",
+   "sco_property_definition": "Specifies a sequence of one or more policy information terms, each of which consists of an object identifier (OID) and optional qualifiers. Also equivalent to the object ID (OID) value of 2.5.29.32."
+ },
+ {
+   "stix2detect_ref": 255,
+   "property_name": "x509-certificate:x509_v3_extensions.policy_mappings",
+   "value_type": "string",
+   "value_example": "1234",
+   "sco_property_definition": "Specifies one or more pairs of OIDs; each pair includes an issuerDomainPolicy and a subjectDomainPolicy. The pairing indicates whether the issuing CA considers its issuerDomainPolicy equivalent to the subject CA's subjectDomainPolicy. Also equivalent to the object ID (OID) value of 2.5.29.33."
+ }
+]

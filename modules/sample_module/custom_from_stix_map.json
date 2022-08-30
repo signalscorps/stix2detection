@@ -1,0 +1,7 @@
+[
+ {
+   "property_name": "x-some-ip",
+   "property_translation": ["src_ip", "src"],
+   "property_comparison": "AND"
+ }
+]

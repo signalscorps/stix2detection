@@ -1,0 +1,5 @@
+ {
+   "property_name": "file:size",
+   "property_value_unit": ["bytes"],
+   "target_conversion" "stix_unit / 1000"
+ }
