@@ -1,15 +1,35 @@
 {
-    "ComparisonComparators.GreaterThan": ">",
-    "ComparisonComparators.GreaterThanOrEqual": ">=",
-    "ComparisonComparators.LessThan": "<",
-    "ComparisonComparators.LessThanOrEqual": "<=",
-    "ComparisonComparators.Equal": "=",
-    "ComparisonComparators.NotEqual": "!=",
+    "charachter_definiton": {
+        "left_parenthesis": "(",
+        "right_parenthesis": ")",
+        "catch_all": "*"
+    },
+    "stix_generic_character_replace": {
+        "left_parenthesis": "{{charachter_definiton.left_parenthesis}}",
+        "right_parenthesis": "{{charachter_definiton.right_parenthesis}}",
+        "left_square_bracket": "{{charachter_definiton.left_parenthesis}}",
+        "right_square_bracket": "{{charachter_definiton.right_parenthesis}}",
+    },
+    "stix_comparison_expression_operator_replace": {
+        "AND": "AND",
+        "OR": "OR"
+    },
+    "stix_comparison_operator_replace": {
+        "greater_than": ">",
+        "greater_than_or_equal": ">=",
+        "less_than": "<",
+        "less_than_or_equal": "<=",
+        "equal": "=",
+        "does_not_equal": "!=",
+
+
+
+
+
     "ComparisonComparators.Like": "encoders.like",
     "ComparisonComparators.In": "encoders.set",
     "ComparisonComparators.Matches": "encoders.matches",
-    "ComparisonExpressionOperators.And": "AND",
-    "ComparisonExpressionOperators.Or": "OR",
+
     "ComparisonComparators.IsSubSet": "=",
     "ObservationOperators.And": "{expr1} OR {expr2}",
     "ObservationOperators.Or": "{expr1} OR {expr2}",
