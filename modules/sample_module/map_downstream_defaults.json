@@ -1,0 +1,17 @@
+{
+    "charachter_definitons": {
+        "left_parenthesis": "(",
+        "right_parenthesis": ")",
+        "catch_all": "*",
+        "like_zero_or_more_charachters": "%",
+        "like_any_one_charachter": "_",
+    },
+    "field_names": {
+        "time_earliest": "earliest",
+        "time_latest": "latest",
+        "search_prepend": "search"
+    },
+    "field_value_schema": {
+        "time_format": "%Y-%m-%dT%H:%M:%S"
+    }
+}

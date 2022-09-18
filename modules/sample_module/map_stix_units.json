@@ -1,0 +1,4 @@
+ {
+   "property_unit": "bytes",
+   "target_conversion" "property_unit.value / 1000"
+ }

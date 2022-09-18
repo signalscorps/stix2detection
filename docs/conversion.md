@@ -1,5 +1,12 @@
 # Conversions
 
+
+## STIX Pattern Structure
+
+![](/docs/assets/img/stix-pattern-structure-meta.jpeg)
+
+The above image provides a good reference for some of the STIX Pattern concepts discussed on this page.
+
 ## STIX Properties
 
 There 18 STIX SCOs, which between them have 255 property names that accept raw values (thus can be used in patterns).
@@ -18,30 +25,39 @@ Here is an excerpt showing the `ipv4-addr` SCO and its `value` property;
  },
 ```
 
-It is these `property_name`s that are converted into target field names of target languages by each target language modules (e.g. `ipv4-addr:value` is translated to `src_ip` in the target rule format).
+It is these `property_name`s (STIX Object Paths) that are converted into target field names of target languages by each target language modules (e.g. `ipv4-addr:value` is translated to `src_ip` in the target rule format).
 
-Each STIX property has a `value_type` defintion and a `value_example`. These are useful to understand how the STIX property should be mapped to the target format.
+Each STIX property has a `value_type` defintion and a `value_example`. These are useful to understand how the STIX property should be mapped to the target format (the STIX Object Value).
 
-* string
-    * encryption-algorithm-enum
-    * hash-algorithm-ov
-    * windows-pebinary-type-ov
-    * network-socket-address-family-enum
-    * network-socket-type-enum
-    * windows-integrity-level-enum
-    * windows-service-start-type-enum
-    * windows-service-type-enum
-    * windows-service-status-enum
-    * account-type-ov
-    * windows-registry-datatype-enum
-* binary
-* integer
-* timestamp
-* boolean
-* list of type string
-* dictionary
-* hex
-* float
+In the list below, I have included the count (`n`) of fields that accept each data type.
+
+* `binary` (1)
+* `string` (80), total does not include values for fields
+  * `hash-algorithm-ov` (56)
+  * `account-type-ov` (1)
+  * `windows-pebinary-type-ov` (1)
+* `boolean` (13)
+* `dictionary` (8)
+* `encryption-algorithm-enum` (1)
+* `float` (1)
+* `hex` (14)
+* `integer` (46)
+* `list of type string` (5)
+* `network-socket-address-family-enum` (1)
+* `network-socket-type-enum` (1)
+* `timestamp` (21)
+* `windows-integrity-level-enum` (1)
+* `windows-service-start-type-enum` (1)
+* `windows-service-type-enum` (1)
+* `windows-service-status-enum` (1)
+* `windows-registry-datatype-enum` (1)
+
+### Ignored 
+
+* 18 top level SCOs. These are not considered as they do not accept field values.
+* 18 sub-properties that accept no values
+* 15 properties that accept `list of type identifier` (property name ends with `_refs`). These reference one or more other SCOs. stix2detection does not currently handle these
+* 9 properties that hat accept identifier (property name ends with `_ref`)
 
 ## 1. Modular structure of translation
 
@@ -51,15 +67,25 @@ In order to ensure ease of extensibility of stix2detection (even for non-develop
 
 * Charachter/command mappings: these define how characters in STIX patterns are represented in downstream products
 
-* Unit conversions: this defines any conversions 
+1. Unit conversions: this defines any conversions 
   * e.g. STIX uses bytes as a size unit, many other products use kilobytes, so bytes field values need to be converted for the target sodtware in kb.
-* Field Mappings: this defines how STIX Pattern property names should be converted into the modules expected query names
+2. Field Mappings: this defines how STIX Pattern property names should be converted into the modules expected query names
   * e.g. STIX has the property `ipv4-addr:value` in a target language this field might be name `src_ip` and `dest_ip` therefore the property name needs to be translated for downstream product
-* Operator Mappings: this defines how STIX Pattern operators should be convered into operators the downstream target understands.
+3. Operator Mappings: this defines how STIX Pattern operators (Comparison Operators, Comparison Expression Operators, Obeservation Operator) should be convered into operators and functions the downstream target understands.
   * e.g. STIX uses the Comparison Operator `!=` (does not equal) in some downstream products this operator might be `NOT` so needs to be translated on conversion
-* Module Output (optional): this defines how the translated values should be written. Default is stdout
+4. Module Output (optional): this defines how the translated values should be written. Default is stdout
 
-### 1.1 Module Field mappings
+### 1.1 Module unit conversions
+
+Currently STIX 2.1 property values only supports one main unit that needs to be converted, `bytes` (see `stix_property_dictionary.json`). 
+
+The `map_units.json` file allows you to specify the calculation to turn bytes into a unit used by the downstream product.
+
+### 1.2 Module charachter conversions
+
+To ensure the characters used in STIX 2.1 patterns match those expected in downstream tools, file2stix also requires you to define these charachters in the `map_downstream_defaults.json` file.
+
+### 1.3 Module Field mappings
 
 In many cases, products use different field names to represent the same thing. This means a mapping between source language (STIX 2.1 Patterns) and target language (represented by module) is required.
 
@@ -107,14 +133,10 @@ The output would be;
 ((src_ip="1.1.1.1" OR src="1.1.1.1" OR dest_ip="1.1.1.1" OR dest="1.1.1.1"))
 ```
 
-As you will see in the sample module, there is only one `property_name` compared to the 287 in `stix_property_dictionary.json`.
+
+If a `property_name` exists in `default_from_stix_map.json` but does not have a `property_translation` it will be ignored.
 
 This is common because in some cases field mappings do not exist between STIX 2.1 Pattern and the target language. For example, the STIX 2.1 propetry field name `file:extensions:pdf-ext.is_optimized` does not map to any field name in the Splunk CIM data model.
-
-In this case stix2detection can be instructed to do one of two things;
-
-1. Ignore field name / value from the target query: in this case, the property will not be translated.
-2. Use field value only as plaintext: in this case the property value is entered as plaintext in the translation (without the fieldname)
 
 Many of you will also use custom STIX properties in their own [custom extensions definitions to define new Objects or new properties](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_32j232tfvtly). stix2detection modules can handle these in a `custom_from_stix_map.json` used in the module.
 
@@ -134,15 +156,66 @@ This contains a native STIX property mapped in `default_from_stix_map.json` (`ip
 ((src_ip="5.5.5.5" OR src="5.5.5.5" OR dest_ip="5.5.5.5" OR dest="5.5.5.5")) AND ((src_ip="6.6.6.6" AND src="6.6.6.6"))
 ```
 
-### 1.2. Module Operator/Qualifier Mappings
+In the case where stix2detection encounters a property name in the Pattern without a mapping in either `custom_from_stix_map.json` or `default_from_stix_map.json`it can be instructed to do one of two things when a property name used in a pattern does not contain a mapping;
 
-STIX 2.1 has a range of operators and qualifiers.
+1. Ignore field name / value from the target query: in this case, the property will not be translated.
+2. Use field value only as plaintext: in this case the property value is entered as plaintext in the translation (without the fieldname)
 
-* Parenthesis / brackets (e.g. `(a AND b)`)
-* Observation Expression Qualifiers (e.g. `a REPEATS x TIMES`)
-* Observation Operators (e.g. `[ a ] AND [ b ]`)
-* Comparison Expressions (e.g. `a AND b`)
-* Comparison Operators (e.g `=`, `a MATCHES b`)
+### 1.4. Module Operator Mappings
+
+STIX 2.1 has three types of operators
+
+1. Comparison Operators
+2. Comparison Expression Operators
+3. Observation Operator
+
+stix2conversion does not support all STIX 2.1 pattern operators (yet!). The support is as follows;
+
+### 1.4.1. Comparison Operators
+
+https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_t11hn314cr7w
+
+Supported:
+
+* and (`a AND b`)
+* or (`a OR b`)
+* equals (`a = b`)
+* does_not_equal (`!a = b`)
+* greater_than (`a > b`)
+* greater_than_or_equal (`a >= b`)
+* less_than (`a < b`)
+* less_than_or_equal (`a <= b`)
+* in (`a IN b`)
+* like (`a LIKE b`)
+* matches (`a MATCHES b`)
+* exists (`a EXISTS b`)
+
+Unsupported:
+
+* `a ISSUBSET b`
+* `a ISSUPERSET b`
+
+### 1.4.2. Comparison Expression Operators
+
+Unsupported 
+
+* `a REPEATS x TIMES`
+* `a WITHIN x SECONDS`
+* `a START x STOP y`
+
+### 1.4.3. Observation Operator
+
+Supported:
+
+* and (`[ a ] AND [ b ]`)
+* or (`[ a ] OR [ b ]`)
+
+Unsupported:
+
+* `[ a ] FOLLOWEDBY [ b ]`
+
+
+
 
 On total there are 24 available variations with translations defintions that need to be defined in a module.
 

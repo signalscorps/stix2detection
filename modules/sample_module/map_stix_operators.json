@@ -1,0 +1,28 @@
+{
+    "generic_pattern_character_replace": {
+        "left_parenthesis": "{{map_downstream_defaults.charachter_definiton.left_parenthesis}}",
+        "right_parenthesis": "{{map_downstream_defaults.charachter_definiton.right_parenthesis}}",
+        "left_square_bracket": "{{map_downstream_defaults.charachter_definiton.left_parenthesis}}",
+        "right_square_bracket": "{{map_downstream_defaults.charachter_definiton.right_parenthesis}}",
+    },
+    "observation_operator_replace": {
+        "and": "AND",
+        "or": "OR"
+    },
+    "comparison_operator_replace": {
+        "and": "AND",
+        "or": "OR",
+        "equals": "=",
+        "does_not_equal": "!=",
+        "greater_than": ">",
+        "greater_than_or_equal": ">=",
+        "less_than": "<",
+        "less_than_or_equal": "<=",
+        "in": "",
+        "like": "",
+        "exists": "",
+        "matches": ""
+    },
+    "comparison_expression_operator_replace": {
+    }
+}
